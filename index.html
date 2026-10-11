@@ -28,14 +28,17 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-dark.png">
 
-  <!-- Architectural Typography: Bodoni Moda (Editorial Luxury), Geist (Swiss Precision), Syne, Space Mono, Plus Jakarta Sans -->
+  <!-- Preload Critical Hero Poster Image for Instant LCP -->
+  <link rel="preload" as="image" href="assets/projects/shopnaloy-hero.jpg" fetchpriority="high">
+
+  <!-- Performance-Tuned Typography: Bodoni Moda, Geist, Syne, Space Mono, Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Geist:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600;6..96,700&family=Geist:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
 
   <!-- Core Architectural Stylesheet -->
-  <link rel="stylesheet" href="css/style.css?v=4.3">
+  <link rel="stylesheet" href="css/style.css?v=4.4">
 
   <!-- Schema.org Real Estate Agent & Local Business Metadata -->
   <script type="application/ld+json">
@@ -78,8 +81,8 @@
     <div class="nav-container">
       <!-- Monogram & Identity -->
       <a href="#hero" class="brand-monogram" aria-label="Brother’s Engineering & Construction Home">
-        <img src="assets/logo-white.png" alt="Brother’s Engineering & Construction" class="logo-light">
-        <img src="assets/logo-dark.png" alt="Brother’s Engineering & Construction" class="logo-dark">
+        <img src="assets/logo-white.png" alt="Brother’s Engineering & Construction" class="logo-light" width="180" height="42" decoding="async">
+        <img src="assets/logo-dark.png" alt="Brother’s Engineering & Construction" class="logo-dark" width="180" height="42" decoding="async">
       </a>
 
       <!-- Primary Desktop Links -->
@@ -124,7 +127,7 @@
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <div class="drawer-header">
       <div class="brand-monogram">
-        <img src="assets/logo-white.png" alt="Brother’s Engineering & Construction Logo">
+        <img src="assets/logo-white.png" alt="Brother’s Engineering & Construction Logo" width="180" height="42" decoding="async">
       </div>
       <button class="menu-toggle" id="drawer-close" aria-label="Close Navigation Menu">
         <span class="material-symbols-outlined">close</span>
@@ -183,8 +186,8 @@
          ========================================================================== -->
     <section class="hero-section" id="hero">
       <div class="hero-background-wrapper">
-        <video class="hero-bg-video" id="hero-bg" autoplay muted loop playsinline webkit-playsinline="true" x5-playsinline="true" preload="auto" poster="assets/projects/shopnaloy-hero.jpg" onloadedmetadata="this.playbackRate = 0.65;">
-          <source src="assets/projects/herovideo.mp4" type="video/mp4">
+        <video class="hero-bg-video" id="hero-bg" autoplay muted loop playsinline webkit-playsinline="true" x5-playsinline="true" preload="metadata" poster="assets/projects/shopnaloy-hero.jpg" onloadedmetadata="this.playbackRate = 0.65;">
+          <source src="assets/projects/herovideo2.mp4" type="video/mp4">
         </video>
         <div class="hero-gradient-overlay"></div>
       </div>
@@ -322,7 +325,7 @@
 
           <div>
             <div class="editorial-visual-frame">
-              <img src="assets/projects/shopnaloy-twilight.jpg" alt="BEC Engineering and Construction" class="editorial-visual-img">
+              <img src="assets/projects/shopnaloy-twilight.jpg" alt="BEC Engineering and Construction" class="editorial-visual-img" loading="lazy" decoding="async" width="800" height="520">
               <div class="editorial-tag-overlay">
                 <span class="label-caps" style="color: var(--color-champagne); display: block; margin-bottom: 4px;">ENGINEERED EXECUTION</span>
                 <p class="body-sm" style="color: var(--color-ivory);" id="about-visual-caption">
@@ -883,7 +886,7 @@
       <div class="footer-top-grid">
         <div class="footer-brand-pane">
           <div class="brand-monogram">
-            <img src="assets/logo-white.png" alt="Brother’s Engineering & Construction Monogram">
+            <img src="assets/logo-white.png" alt="Brother’s Engineering & Construction Monogram" width="180" height="42" loading="lazy" decoding="async">
           </div>
           <h3 style="font-family: var(--font-headline); color: var(--color-ivory); font-size: 1.25rem; letter-spacing: 0.08em; margin-top: 1rem;">BROTHER’S ENGINEERING & CONSTRUCTION</h3>
           <p class="body-sm" style="color: var(--color-champagne); font-weight: 600; letter-spacing: 0.05em; margin-top: 0.25rem;">
@@ -1034,8 +1037,8 @@
     </a>
   </nav>
 
-  <!-- Application Logic Scripts -->
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <!-- Application Logic Scripts (Deferred for instant main-thread responsiveness) -->
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

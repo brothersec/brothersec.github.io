@@ -27,79 +27,134 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ==========================================================================
-   0. HERO BACKGROUND VIDEO AUTOPLAY
+   0. HERO BACKGROUND VIDEO AUTOPLAY & VIEWPORT-AWARE BATTERY/GPU SAVER
    ========================================================================== */
 function initHeroVideo() {
   const heroVideo = document.getElementById('hero-bg');
-  if (heroVideo && heroVideo.tagName === 'VIDEO') {
+  const heroSection = document.getElementById('hero');
+  if (!heroVideo || heroVideo.tagName !== 'VIDEO') return;
+
+  heroVideo.muted = true;
+  heroVideo.defaultMuted = true;
+  heroVideo.setAttribute('muted', '');
+  heroVideo.setAttribute('playsinline', '');
+  heroVideo.setAttribute('webkit-playsinline', 'true');
+  heroVideo.setAttribute('x5-playsinline', 'true');
+
+  const setPlaybackSpeed = () => {
+    heroVideo.playbackRate = 0.65;
+  };
+  setPlaybackSpeed();
+  heroVideo.addEventListener('loadedmetadata', setPlaybackSpeed, { once: true });
+  heroVideo.addEventListener('play', setPlaybackSpeed);
+
+  const attemptPlay = () => {
     heroVideo.muted = true;
-    heroVideo.defaultMuted = true;
-    heroVideo.setAttribute('muted', '');
-    heroVideo.setAttribute('playsinline', '');
-    heroVideo.setAttribute('webkit-playsinline', 'true');
-    heroVideo.setAttribute('x5-playsinline', 'true');
-
-    // Serene, architectural motion at 0.65x playback speed
-    const setSlowSpeed = () => {
-      heroVideo.playbackRate = 0.65;
-    };
-
-    setSlowSpeed();
-    heroVideo.addEventListener('loadedmetadata', setSlowSpeed);
-    heroVideo.addEventListener('play', setSlowSpeed);
-
-    const attemptPlay = () => {
-      heroVideo.muted = true;
-      const playPromise = heroVideo.play();
-      if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Fallback on first user gesture
-          const onUserGesture = () => {
-            heroVideo.muted = true;
-            heroVideo.playbackRate = 0.65;
-            heroVideo.play().catch(() => {});
-            ['click', 'touchstart', 'scroll', 'touchmove'].forEach(evt => {
-              window.removeEventListener(evt, onUserGesture, { passive: true });
-            });
-          };
+    const playPromise = heroVideo.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        const onUserGesture = () => {
+          heroVideo.muted = true;
+          heroVideo.playbackRate = 0.65;
+          heroVideo.play().catch(() => {});
           ['click', 'touchstart', 'scroll', 'touchmove'].forEach(evt => {
-            window.addEventListener(evt, onUserGesture, { passive: true, once: true });
+            window.removeEventListener(evt, onUserGesture);
           });
+        };
+        ['click', 'touchstart', 'scroll', 'touchmove'].forEach(evt => {
+          window.addEventListener(evt, onUserGesture, { passive: true, once: true });
         });
-      }
-    };
-
-    if (heroVideo.readyState >= 2) {
-      attemptPlay();
-    } else {
-      heroVideo.addEventListener('canplay', attemptPlay, { once: true });
-      attemptPlay();
-    }
-  }
-}
-
-/* ==========================================================================
-   1. NAVIGATION SCROLL & HEADER TRANSITIONS
-   ========================================================================== */
-function initNavbarScroll() {
-  const header = document.getElementById('site-header');
-  if (!header) return;
-
-  const handleScroll = () => {
-    const scrollPos = window.scrollY || window.pageYOffset;
-    const heroHeight = document.getElementById('hero')?.offsetHeight || 600;
-
-    if (scrollPos > heroHeight - 100) {
-      header.classList.remove('hero-transparent');
-      header.classList.add('scrolled');
-    } else {
-      header.classList.add('hero-transparent');
-      header.classList.remove('scrolled');
+      });
     }
   };
 
-  window.addEventListener('scroll', handleScroll, { passive: true });
-  handleScroll();
+  if (heroVideo.readyState >= 2) {
+    attemptPlay();
+  } else {
+    heroVideo.addEventListener('canplay', attemptPlay, { once: true });
+    attemptPlay();
+  }
+
+  // Viewport Observer: Pause video when scrolled out of view to free 100% GPU/CPU
+  if ('IntersectionObserver' in window && heroSection) {
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (heroVideo.paused) {
+            heroVideo.play().catch(() => {});
+          }
+        } else {
+          if (!heroVideo.paused) {
+            heroVideo.pause();
+          }
+        }
+      });
+    }, { threshold: 0.05 });
+    videoObserver.observe(heroSection);
+  }
+
+  // Suspend when browser tab is hidden to save client resources
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      if (!heroVideo.paused) heroVideo.pause();
+    } else if (heroSection && heroSection.getBoundingClientRect().bottom > 0) {
+      heroVideo.play().catch(() => {});
+    }
+  });
+}
+
+/* ==========================================================================
+   1. NAVIGATION SCROLL & HEADER TRANSITIONS (ZERO-JANK INTERSECTIONOBSERVER)
+   ========================================================================== */
+function initNavbarScroll() {
+  const header = document.getElementById('site-header');
+  const hero = document.getElementById('hero');
+  if (!header) return;
+
+  if ('IntersectionObserver' in window && hero) {
+    // Ultra-smooth zero-reflow scroll detection via compositor
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        header.classList.add('hero-transparent');
+        header.classList.remove('scrolled');
+      } else {
+        header.classList.remove('hero-transparent');
+        header.classList.add('scrolled');
+      }
+    }, {
+      rootMargin: '-70px 0px 0px 0px',
+      threshold: 0
+    });
+    observer.observe(hero);
+  } else {
+    // Throttled rAF fallback
+    let ticking = false;
+    let isScrolled = false;
+    const update = () => {
+      const scrollPos = window.scrollY || window.pageYOffset;
+      const heroHeight = hero?.offsetHeight || 600;
+      const shouldBeScrolled = scrollPos > heroHeight - 80;
+      if (shouldBeScrolled !== isScrolled) {
+        isScrolled = shouldBeScrolled;
+        if (isScrolled) {
+          header.classList.remove('hero-transparent');
+          header.classList.add('scrolled');
+        } else {
+          header.classList.add('hero-transparent');
+          header.classList.remove('scrolled');
+        }
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+    update();
+  }
 }
 
 /* ==========================================================================

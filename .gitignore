@@ -5,3 +5,10 @@ bdm-logo*.jpeg
 bdm-logo*.jpg
 stitch_bdm_limited_architecture_platform/
 stitch_brothers_engineering_corporate_website/
+
+# Video downloads & large archives
+Subedaar*
+*.mkv
+*.avi
+*.iso
+assets/projects/herovideo1.mp4

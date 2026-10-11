@@ -293,7 +293,9 @@ button, input, select, textarea {
   width: 100%;
   height: var(--header-height);
   z-index: 100;
-  transition: background-color var(--transition-normal), border-color var(--transition-normal), backdrop-filter var(--transition-normal);
+  transform: translateZ(0);
+  will-change: background-color, border-color;
+  transition: background-color var(--transition-normal), border-color var(--transition-normal);
   border-bottom: 1px solid transparent;
 }
 
@@ -660,26 +662,34 @@ button, input, select, textarea {
 }
 
 .beacon-pulse {
+  position: relative;
   width: 7px;
   height: 7px;
   background-color: var(--color-champagne);
   border-radius: 50% !important;
-  box-shadow: 0 0 0 0 rgba(185, 162, 122, 0.7);
-  animation: beaconPulseAnim 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
 }
 
-@keyframes beaconPulseAnim {
+.beacon-pulse::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50% !important;
+  border: 1.5px solid var(--color-champagne);
+  animation: beaconPulseGPU 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  will-change: transform, opacity;
+}
+
+@keyframes beaconPulseGPU {
   0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(185, 162, 122, 0.7);
-  }
-  70% {
-    transform: scale(1.15);
-    box-shadow: 0 0 0 8px rgba(185, 162, 122, 0);
+    transform: scale(0.9);
+    opacity: 0.9;
   }
   100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(185, 162, 122, 0);
+    transform: scale(2.2);
+    opacity: 0;
   }
 }
 
@@ -3262,4 +3272,31 @@ button, input, select, textarea {
     scroll-behavior: auto !important;
   }
 }
+
+/* ==========================================================================
+   PERFORMANCE & COMPOSITING ENHANCEMENTS (SILKY 60FPS SCROLLING)
+   ========================================================================== */
+#services,
+#design-to-build,
+#process,
+#projects,
+#construction,
+#interiors,
+#trust,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 750px;
+}
+
+.floating-whatsapp-btn,
+.mobile-quickbar {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize image rendering and layout containment */
+img {
+  content-visibility: auto;
+}
+
 
