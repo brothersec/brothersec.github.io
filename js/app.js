@@ -38,12 +38,15 @@ function initHeroVideo() {
   const heroSection = document.getElementById('hero');
   if (!heroVideo || heroVideo.tagName !== 'VIDEO') return;
 
+  heroVideo.removeAttribute('poster');
   heroVideo.muted = true;
   heroVideo.defaultMuted = true;
+  heroVideo.loop = true;
   heroVideo.setAttribute('muted', '');
   heroVideo.setAttribute('playsinline', '');
   heroVideo.setAttribute('webkit-playsinline', 'true');
   heroVideo.setAttribute('x5-playsinline', 'true');
+  heroVideo.setAttribute('loop', '');
 
   const setPlaybackSpeed = () => {
     heroVideo.playbackRate = 0.65;
@@ -51,6 +54,12 @@ function initHeroVideo() {
   setPlaybackSpeed();
   heroVideo.addEventListener('loadedmetadata', setPlaybackSpeed, { once: true });
   heroVideo.addEventListener('play', setPlaybackSpeed);
+
+  // Guarantee seamless loop at all times
+  heroVideo.addEventListener('ended', () => {
+    heroVideo.currentTime = 0;
+    heroVideo.play().catch(() => {});
+  });
 
   const attemptPlay = () => {
     heroVideo.muted = true;

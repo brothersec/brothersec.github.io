@@ -28,8 +28,8 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo-dark.png">
 
-  <!-- Preload Critical Hero Poster Image for Instant LCP -->
-  <link rel="preload" as="image" href="assets/projects/shopnaloy-hero.jpg" fetchpriority="high">
+  <!-- Preload Critical Hero Background Video -->
+  <link rel="preload" as="video" href="assets/projects/herovideo2.mp4" type="video/mp4">
 
   <!-- Performance-Tuned Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -199,9 +199,21 @@
          ========================================================================== -->
     <section class="hero-section" id="hero">
       <div class="hero-background-wrapper">
-        <video class="hero-bg-video" id="hero-bg" autoplay muted loop playsinline webkit-playsinline="true" x5-playsinline="true" preload="metadata" poster="assets/projects/shopnaloy-hero.jpg" onloadedmetadata="this.playbackRate = 0.65;">
+        <video class="hero-bg-video" id="hero-bg" src="assets/projects/herovideo2.mp4" autoplay muted loop playsinline webkit-playsinline="true" x5-playsinline="true" preload="auto">
           <source src="assets/projects/herovideo2.mp4" type="video/mp4">
         </video>
+        <script>
+          (function() {
+            var v = document.getElementById('hero-bg');
+            if (v) {
+              v.muted = true;
+              v.defaultMuted = true;
+              v.playsInline = true;
+              var p = v.play();
+              if (p && p.catch) p.catch(function(){});
+            }
+          })();
+        </script>
         <div class="hero-gradient-overlay"></div>
       </div>
 
