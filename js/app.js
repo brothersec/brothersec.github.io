@@ -696,14 +696,11 @@ function setLanguage(lang) {
     // Hero
     if (heroEyebrow) heroEyebrow.textContent = BDM_DATA.brand.bengaliEyebrow;
     if (heroHeadline) heroHeadline.innerHTML = BDM_DATA.brand.bengaliHeadline;
-    if (heroStrapline) heroStrapline.textContent = "পরিকল্পনা থেকে সমাপ্তি — আপনার ধারণা থেকে বাস্তব স্থান।";
     if (heroSubtext) heroSubtext.textContent = BDM_DATA.brand.bengaliHeroDesc;
-    if (heroExpBanner) heroExpBanner.innerHTML = `<span class='material-symbols-outlined' style='color: var(--color-champagne); font-size: 22px;'>verified</span><div><strong>স্থাপিত ২০১৯।</strong> ${BDM_DATA.brand.bengaliCredibilityStatement}</div>`;
     if (heroCtaStart) heroCtaStart.textContent = "প্রকল্প শুরু করুন";
-    if (heroCtaServices) heroCtaServices.innerHTML = `<span class='material-symbols-outlined' style='font-size: 18px;'>apps</span><span>আমাদের সেবাসমূহ</span>`;
-    if (heroSupportingLine) heroSupportingLine.textContent = "স্থাপত্য নকশা • স্ট্রাকচারাল ডিজাইন • ইন্টেরিয়র • কনসালটেন্সি • ভবন নির্মাণ";
-    if (tickerLeftText) tickerLeftText.textContent = "উদ্দেশ্যপূর্ণ নকশা। আস্থার সাথে নির্মাণ।";
-    if (tickerCenterText) tickerCenterText.innerHTML = "<span>প্রকৌশল, নকশা এবং নির্মাণ সমাধান — পরিকল্পনা থেকে সমাপ্তি।</span>";
+    if (heroCtaServices) heroCtaServices.innerHTML = `<span class='material-symbols-outlined' style='font-size: 18px;'>apps</span><span>সেবাসমূহ দেখুন</span>`;
+    if (tickerLeftText) tickerLeftText.textContent = "স্থাপিত ২০১৯ · চট্টগ্রাম";
+    if (tickerCenterText) tickerCenterText.innerHTML = "<span>উদ্দেশ্যপূর্ণ নকশা। আস্থার সাথে নির্মাণ।</span>";
 
     // About
     if (aboutTag) aboutTag.textContent = "আমাদের পরিচয় ও দৃষ্টিভঙ্গি";
@@ -784,14 +781,11 @@ function setLanguage(lang) {
     // Hero
     if (heroEyebrow) heroEyebrow.textContent = BDM_DATA.brand.eyebrow;
     if (heroHeadline) heroHeadline.innerHTML = BDM_DATA.brand.headline;
-    if (heroStrapline) heroStrapline.textContent = "DESIGN WITH PURPOSE. BUILD WITH CONFIDENCE.";
     if (heroSubtext) heroSubtext.textContent = BDM_DATA.brand.heroDesc;
-    if (heroExpBanner) heroExpBanner.innerHTML = `<span class='material-symbols-outlined' style='color: var(--color-champagne); font-size: 22px;'>verified</span><div><strong>ESTABLISHED 2019.</strong> ${BDM_DATA.brand.credibilityStatement}</div>`;
     if (heroCtaStart) heroCtaStart.textContent = "START YOUR PROJECT";
-    if (heroCtaServices) heroCtaServices.innerHTML = `<span class='material-symbols-outlined' style='font-size: 18px;'>apps</span><span>EXPLORE OUR SERVICES</span>`;
-    if (heroSupportingLine) heroSupportingLine.textContent = "Architectural Design • Structural Engineering • Interior Design • Consultancy • Construction";
-    if (tickerLeftText) tickerLeftText.textContent = "DESIGN WITH PURPOSE. BUILD WITH CONFIDENCE.";
-    if (tickerCenterText) tickerCenterText.innerHTML = "<span>ENGINEERING, DESIGN AND CONSTRUCTION SOLUTIONS — FROM CONCEPT TO COMPLETION.</span>";
+    if (heroCtaServices) heroCtaServices.innerHTML = `<span class='material-symbols-outlined' style='font-size: 18px;'>apps</span><span>EXPLORE SERVICES</span>`;
+    if (tickerLeftText) tickerLeftText.textContent = "ESTABLISHED 2019 · CHATTOGRAM";
+    if (tickerCenterText) tickerCenterText.innerHTML = "<span>DESIGN WITH PURPOSE. BUILD WITH CONFIDENCE.</span>";
 
     // About
     if (aboutTag) aboutTag.textContent = "WHO WE ARE";
