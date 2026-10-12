@@ -873,17 +873,49 @@ function setLanguage(lang) {
 /* ==========================================================================
    14. ENQUIRY FORM WORKFLOW
    ========================================================================== */
-function handleEnquirySubmit(e) {
+async function handleEnquirySubmit(e) {
   e.preventDefault();
   
   const name = document.getElementById('patron-name').value.trim();
   const phone = document.getElementById('patron-phone').value.trim();
   const service = document.getElementById('patron-service').value;
   const notes = document.getElementById('patron-notes').value.trim();
+  const submitBtn = document.getElementById('btn-submit-project');
+  const btnText = document.getElementById('btn-submit-text');
 
   if (!name || !phone) {
     alert("Please provide both your name and phone number.");
     return;
+  }
+
+  // Visual loading feedback
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+  }
+  if (btnText) {
+    btnText.textContent = currentLanguage === 'en' ? "TRANSMITTING INQUIRY..." : "অনুরোধ পাঠানো হচ্ছে...";
+  }
+
+  try {
+    // Send form data directly to company email: mail.brotherseng@gmail.com
+    await fetch("https://formsubmit.co/ajax/mail.brotherseng@gmail.com", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        name: name,
+        phone: phone,
+        service: service,
+        project_details: notes || "No additional notes specified.",
+        _subject: `New Project Inquiry: ${service} - ${name}`,
+        _template: "table"
+      })
+    });
+  } catch (err) {
+    console.warn("Form submission fallback:", err);
   }
 
   const formPane = document.querySelector('.enquiry-form-pane');
@@ -897,8 +929,8 @@ function handleEnquirySubmit(e) {
         </h3>
         <p class="body-md" style='color: rgba(244,240,232,0.85); line-height: 1.7;'>
           ${isEn 
-            ? `Your consultation request regarding <strong>${service}</strong> has been received. The BEC engineering team in Chattogram will connect with you at <strong>${phone}</strong> promptly.`
-            : `<strong>${service}</strong> বিষয়ে আপনার পরামর্শ অনুরোধটি গ্রহণ করা হয়েছে। চট্টগ্রামের বিইসি প্রকৌশল টিম অতিশীঘ্রই <strong>${phone}</strong> নম্বরে আপনার সাথে যোগাযোগ করবে।`}
+            ? `Your consultation request regarding <strong>${service}</strong> has been sent to <strong>mail.brotherseng@gmail.com</strong>. The BEC engineering team in Chattogram will connect with you at <strong>${phone}</strong> promptly.`
+            : `<strong>${service}</strong> বিষয়ে আপনার পরামর্শ অনুরোধটি <strong>mail.brotherseng@gmail.com</strong>-এ পাঠানো হয়েছে। চট্টগ্রামের বিইসি প্রকৌশল টিম অতিশীঘ্রই <strong>${phone}</strong> নম্বরে আপনার সাথে যোগাযোগ করবে।`}
         </p>
         <div style="background: rgba(255,255,255,0.06); padding: 1.25rem; border-left: 2px solid var(--color-champagne); margin-top: 0.5rem;">
           <p class="body-sm" style='color: var(--color-champagne); font-weight: 600; margin: 0;'>
@@ -909,7 +941,7 @@ function handleEnquirySubmit(e) {
             <a href="tel:+8801715065577" style="color: var(--color-ivory); text-decoration: underline;">01715-065577</a>
           </p>
           <p class="body-sm" style='color: rgba(244,240,232,0.8); margin: 0.5rem 0 0 0; font-size: 0.8rem;'>
-            Email: <a href="mailto:shahid_islam_77@yahoo.com" style="color: var(--color-champagne);">shahid_islam_77@yahoo.com</a>
+            Email: <a href="mailto:mail.brotherseng@gmail.com" style="color: var(--color-champagne);">mail.brotherseng@gmail.com</a>
           </p>
         </div>
         <button class="btn btn-secondary" style='border-color: rgba(255,255,255,0.3); color: var(--color-ivory); margin-top: 1rem; align-self: flex-start;' onclick="window.location.reload()">

@@ -45,7 +45,7 @@ const BDM_DATA = {
   hotlines: [
     { label: "Direct Phone & WhatsApp", number: "01828-178962", raw: "+8801828178962", whatsapp: true },
     { label: "Office Phone", number: "01715-065577", raw: "+8801715065577", whatsapp: false },
-    { label: "Email Consultation", number: "shahid_islam_77@yahoo.com", raw: "mailto:shahid_islam_77@yahoo.com", email: true }
+    { label: "Email Consultation", number: "mail.brotherseng@gmail.com", raw: "mailto:mail.brotherseng@gmail.com", email: true }
   ],
 
   offices: [
@@ -56,7 +56,7 @@ const BDM_DATA = {
       address: "2813/C, Al-Helal Bhaban, Ground Floor, Halishahar Road, Eidgah Kacha Rastar Matha, Pahartali, Chattogram",
       bengaliAddress: "২৮১৩/সি, আল-হেলাল ভবন, নিচতলা, হালিশহর রোড, ঈদগাহ কাঁচা রাস্তার মাথা, পাহাড়তলী, চট্টগ্রাম",
       phone: "01828-178962 / 01715-065577",
-      email: "shahid_islam_77@yahoo.com",
+      email: "mail.brotherseng@gmail.com",
       coords: "22.3491° N, 91.8029° E",
       category: "Engineering Coordination & Project Planning"
     }

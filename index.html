@@ -59,7 +59,7 @@
       "honorificSuffix": "B.Sc. Engg. (Civil), FIEB"
     },
     "telephone": "+8801828178962",
-    "email": "shahid_islam_77@yahoo.com",
+    "email": "mail.brotherseng@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2813/C, Al-Helal Bhaban, Ground Floor, Halishahar Road, Eidgah Kacha Rastar Matha",
@@ -760,7 +760,7 @@
                   2813/C, Al-Helal Bhaban, Ground Floor, Halishahar Road, Eidgah Kacha Rastar Matha, Pahartali, Chattogram.
                 </p>
                 <p class="body-sm font-mono" style="color: var(--color-champagne-dark); font-size: 0.8rem; margin-top: 4px;">
-                  Email: <a href="mailto:shahid_islam_77@yahoo.com" style="color: var(--color-champagne-dark); text-decoration: underline;">shahid_islam_77@yahoo.com</a>
+                  Email: <a href="mailto:mail.brotherseng@gmail.com" style="color: var(--color-champagne-dark); text-decoration: underline;">mail.brotherseng@gmail.com</a>
                 </p>
               </div>
             </div>
@@ -821,7 +821,7 @@
               </div>
               <div class="contact-direct-item">
                 <span class="label-caps" style="color: var(--color-champagne);">EMAIL ADDRESS</span>
-                <a href="mailto:shahid_islam_77@yahoo.com" class="contact-direct-val">shahid_islam_77@yahoo.com</a>
+                <a href="mailto:mail.brotherseng@gmail.com" class="contact-direct-val">mail.brotherseng@gmail.com</a>
               </div>
               <div class="contact-direct-item">
                 <span class="label-caps" style="color: var(--color-champagne);">WHATSAPP CHAT</span>
@@ -839,20 +839,23 @@
               Share your requirements and our engineering team will get back to you promptly.
             </p>
 
-            <form id="project-enquiry-form" onsubmit="handleEnquirySubmit(event)">
+            <form id="project-enquiry-form" action="https://formsubmit.co/mail.brotherseng@gmail.com" method="POST" onsubmit="handleEnquirySubmit(event)">
+              <input type="hidden" name="_subject" value="New Project Enquiry - Brother’s Engineering & Construction">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
               <div class="form-group">
                 <label class="form-label" for="patron-name">YOUR FULL NAME *</label>
-                <input type="text" id="patron-name" class="form-input" placeholder="e.g. Tanvir Ahmed" required>
+                <input type="text" id="patron-name" name="name" class="form-input" placeholder="e.g. Tanvir Ahmed" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="patron-phone">PHONE NUMBER / WHATSAPP *</label>
-                <input type="tel" id="patron-phone" class="form-input" placeholder="e.g. 01XXXXXXXXX" required>
+                <input type="tel" id="patron-phone" name="phone" class="form-input" placeholder="e.g. 01XXXXXXXXX" required>
               </div>
 
               <div class="form-group">
                 <label class="form-label" for="patron-service">PRIMARY SERVICE OF INTEREST *</label>
-                <select id="patron-service" class="form-select" required>
+                <select id="patron-service" name="service" class="form-select" required>
                   <option value="Architectural Design">Architectural Design &amp; Planning</option>
                   <option value="Structural Design & Engineering">Structural Design &amp; Engineering</option>
                   <option value="Interior Design">Interior Design &amp; Execution</option>
@@ -866,11 +869,11 @@
 
               <div class="form-group">
                 <label class="form-label" for="patron-notes">PROJECT DETAILS, LOCATION OR REQUIREMENTS</label>
-                <textarea id="patron-notes" class="form-textarea" placeholder="Describe your plot size, existing property, location in Chattogram, or project scope..."></textarea>
+                <textarea id="patron-notes" name="notes" class="form-textarea" placeholder="Describe your plot size, existing property, location in Chattogram, or project scope..."></textarea>
               </div>
 
               <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
-                <button type="submit" class="btn btn-champagne" style="flex: 1; height: 3.5rem;">
+                <button type="submit" class="btn btn-champagne" id="btn-submit-project" style="flex: 1; height: 3.5rem;">
                   <span id="btn-submit-text">DISCUSS YOUR PROJECT</span>
                   <span class="material-symbols-outlined btn-arrow-icon">arrow_forward</span>
                 </button>
@@ -965,7 +968,7 @@
             <a href="tel:+8801715065577" style="color: rgba(244,240,232,0.85);">01715-065577</a>
           </p>
           <p class="body-sm" style="color: rgba(244,240,232,0.8); margin-top: 0.5rem; font-size: 0.8rem;">
-            Email: <a href="mailto:shahid_islam_77@yahoo.com" style="color: var(--color-champagne);">shahid_islam_77@yahoo.com</a>
+            Email: <a href="mailto:mail.brotherseng@gmail.com" style="color: var(--color-champagne);">mail.brotherseng@gmail.com</a>
           </p>
         </div>
       </div>
