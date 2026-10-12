@@ -99,6 +99,7 @@ const BDM_DATA = {
       title: "ARCHITECTURAL DESIGN",
       bengaliTitle: "স্থাপত্য নকশা",
       icon: "architecture",
+      image: "assets/projects/shopnaloy-twilight.jpg",
       hook: "Good buildings begin with good design.",
       bengaliHook: "ভালো ভবনের শুরু ভালো নকশা দিয়ে।",
       desc: "We help translate client requirements into architectural concepts and layouts that consider functionality, space planning, appearance, site conditions and intended use.",
@@ -111,6 +112,7 @@ const BDM_DATA = {
       title: "STRUCTURAL DESIGN & ENGINEERING",
       bengaliTitle: "কাঠামোগত নকশা ও প্রকৌশল",
       icon: "engineering",
+      image: "assets/projects/shopnaloy-plan.jpg",
       hook: "Strength begins with sound engineering.",
       bengaliHook: "স্থায়িত্বের মূল ভিত্তি নির্ভুল প্রকৌশল।",
       desc: "We provide structural design and engineering services appropriate to project requirements, with attention to structural systems, safety considerations, durability and applicable technical requirements.",
@@ -123,6 +125,7 @@ const BDM_DATA = {
       title: "INTERIOR DESIGN",
       bengaliTitle: "অভ্যন্তরীণ নকশা ও পরিকল্পনা",
       icon: "chair",
+      image: "assets/living/living.jpg",
       hook: "Make every space work beautifully.",
       bengaliHook: "প্রতিটি পরিসরকে সুন্দর ও ব্যবহারযোগ্য করে তুলুন।",
       desc: "We help plan and design interior spaces with attention to layout, lighting, materials, finishes, usability and the character of the space.",
@@ -135,6 +138,7 @@ const BDM_DATA = {
       title: "CONSTRUCTION WORK",
       bengaliTitle: "ভবন নির্মাণকাজ",
       icon: "apartment",
+      image: "assets/projects/construction-site.jpg",
       hook: "From plans to the built environment.",
       bengaliHook: "পরিকল্পনা থেকে বাস্তব স্থাপনা।",
       desc: "We undertake building construction work for suitable residential and commercial projects, with an emphasis on coordination, workmanship, materials and execution.",
@@ -147,6 +151,7 @@ const BDM_DATA = {
       title: "ENGINEERING CONSULTANCY",
       bengaliTitle: "প্রকৌশল পরামর্শ সেবা",
       icon: "assignment_turned_in",
+      image: "assets/projects/shopnonebash-plan.jpg",
       hook: "Better decisions start with the right guidance.",
       bengaliHook: "সঠিক সিদ্ধান্তের শুরু সঠিক পরামর্শ দিয়ে।",
       desc: "We provide engineering and project-related consultancy to help clients understand requirements, evaluate options and plan the next steps of their construction projects.",
@@ -159,6 +164,7 @@ const BDM_DATA = {
       title: "RENOVATION & REMODELING",
       bengaliTitle: "সংস্কার ও আধুনিকায়ন",
       icon: "construction",
+      image: "assets/living/office.jpg",
       hook: "Improve what exists. Transform what is possible.",
       bengaliHook: "বিদ্যমান কাঠামোর মানোন্নয়ন ও আধুনিকায়ন।",
       desc: "We can support suitable renovation and remodeling projects that modernize existing spaces, improve functionality and respond to changing requirements.",
@@ -171,6 +177,7 @@ const BDM_DATA = {
       title: "DESIGN-TO-BUILD SOLUTIONS",
       bengaliTitle: "ডিজাইন-টু-বিল্ড সমন্বিত সমাধান",
       icon: "handshake",
+      image: "assets/projects/design-studio.jpg",
       hook: "A more connected journey from idea to completion.",
       bengaliHook: "ধারণা থেকে সমাপ্তি পর্যন্ত একটি সমন্বিত পথচলা।",
       desc: "For suitable projects, BEC can coordinate design and construction services to reduce fragmentation between planning and execution and help maintain a coherent project direction.",
@@ -183,6 +190,7 @@ const BDM_DATA = {
       title: "RESIDENTIAL & COMMERCIAL PROJECTS",
       bengaliTitle: "আবাসিক ও বাণিজ্যিক প্রকল্প",
       icon: "domain",
+      image: "assets/projects/shopnonebash-hero.jpg",
       hook: "Solutions for the way people live and work.",
       bengaliHook: "মানুষের বসবাস ও কাজের বাস্তব সমাধান।",
       desc: "From individual houses and residential buildings to offices, shops and other commercial spaces, we work to understand each project's purpose and requirements before recommending an appropriate approach.",
@@ -433,6 +441,69 @@ const BDM_DATA = {
         "Turnkey design-to-build feasibility for prospective property owners"
       ],
       description: "An upcoming design and engineering planning project in Agrabad CDA, reflecting our concept-to-completion capabilities from early feasibility to detailed design."
+    }
+  ],
+
+  interiorCategories: [
+    {
+      id: "living-lounge",
+      tag: "LIVING & LOUNGE",
+      bengaliTag: "লিভিং ও লাউঞ্জ",
+      title: "RESIDENTIAL LIVING ENVIRONMENTS",
+      bengaliTitle: "আবাসিক লিভিং ও পারিবারিক ড্রয়িং",
+      desc: "Open-plan family living spaces, bespoke feature walls, and natural light optimization designed for comfort and everyday hospitality.",
+      bengaliDesc: "খোলামেলা পারিবারিক লিভিং রুম, আধুনিক অ্যাকসেন্ট ওয়াল এবং পর্যাপ্ত প্রাকৃতিক আলোর সুষম ব্যবহারে আরামদায়ক পরিবেশ।",
+      image: "assets/living/living.jpg"
+    },
+    {
+      id: "executive-office",
+      tag: "CORPORATE SUITE",
+      bengaliTag: "করপোরেট অফিস",
+      title: "EXECUTIVE OFFICE & WORKSPACES",
+      bengaliTitle: "নির্বাহী অফিস ও আধুনিক কর্মপরিবেশ",
+      desc: "Sophisticated executive suites, conference facilities, and ergonomic office zoning engineered for corporate productivity and distinction.",
+      bengaliDesc: "মার্জিত এক্সিকিউটিভ কেবিন, কনফারেন্স রুম ও কর্মীবান্ধব অফিস জোনিং—যা প্রতিষ্ঠানের মর্যাদা ও কাজের গতি বাড়ায়।",
+      image: "assets/living/office.jpg"
+    },
+    {
+      id: "kitchen-dining",
+      tag: "KITCHEN & DINING",
+      bengaliTag: "কিচেন ও ডাইনিং",
+      title: "CONTEMPORARY KITCHENS & DINING",
+      bengaliTitle: "আধুনিক রান্নাঘর ও ডাইনিং স্পেস",
+      desc: "Ergonomic modular cabinetry, heat-resistant surfaces, and seamlessly integrated dining layouts designed for modern family living.",
+      bengaliDesc: "মডুলার ক্যাবিনেট্রি, তাপসহনশীল মসৃণ সারফেস ও সমন্বিত ডাইনিং লেআউট—যা দৈনন্দিন রান্না ও খাবার সময়কে আনন্দময় করে।",
+      image: "assets/living/dining.jpg"
+    },
+    {
+      id: "master-suite",
+      tag: "MASTER SANCTUARY",
+      bengaliTag: "মাস্টার সুইট",
+      title: "MASTER BEDROOM SANCTUARIES",
+      bengaliTitle: "মাস্টার বেডরুম ও ব্যক্তিগত পরিসর",
+      desc: "Peaceful sleeping suites with custom headboard joinery, concealed ambient lighting, integrated walk-in closets, and restful acoustics.",
+      bengaliDesc: "শান্তিময় বেডরুম, কাস্টম হেডবোর্ড ক্যাবিনেট্রি, মনোরম অ্যাম্বিয়েন্ট লাইটিং এবং নিরিবিলি আরামদায়ক ব্যক্তিগত পরিসর।",
+      image: "assets/living/master.jpg"
+    },
+    {
+      id: "rooftop-terrace",
+      tag: "ROOFTOP RETREAT",
+      bengaliTag: "ছাদবাগান ও টেরাস",
+      title: "TERRACE GARDENS & SKY RETREATS",
+      bengaliTitle: "টেরাস গার্ডেন ও ছাদের নান্দনিক পরিবেশ",
+      desc: "Lush rooftop green scaping, pergola seating, and weather-resilient terrace lounge solutions designed for open-air relaxation.",
+      bengaliDesc: "পরিকল্পিত ছাদবাগান, পারগোলা সিটিং ও টেকসই ওপেন-এয়ার লাউঞ্জ—যা উন্মুক্ত বাতাসে পরিবারের বিশ্রামের সেরা স্থান।",
+      image: "assets/amenities/rooftop.jpg"
+    },
+    {
+      id: "verandas-balconies",
+      tag: "VERANDAS & JOINERY",
+      bengaliTag: "বারান্দা ও কাস্টম উডওয়ার্ক",
+      title: "VERANDAS, BALCONIES & DETAIL JOINERY",
+      bengaliTitle: "বারান্দা, ভিউ কর্নার ও কারিগরি ফিনিশিং",
+      desc: "Deep sheltered verandas, natural air corridors, and tailored architectural woodcraft connecting indoor comfort with the Chattogram skyline.",
+      bengaliDesc: "বাতাস চলাচলের বারান্দা, মনোরম ভিউ কর্নার এবং সূক্ষ্ম উডওয়ার্ক—যা অভ্যন্তরীণ স্বাচ্ছন্দ্যের সাথে বহিরঙ্গন সংযোগ ঘটায়।",
+      image: "assets/living/balcony.jpg"
     }
   ]
 };

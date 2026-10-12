@@ -222,15 +222,16 @@ function renderServices() {
 
     return `
       <article class="service-card" tabindex="0">
-        <div>
-          <div style='display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;'>
+        <div class="service-card-media">
+          <img src="${svc.image}" alt="${title}" class="service-card-img" loading="lazy">
+          <div class="service-card-badge">
             <span class="service-num">${svc.number}</span>
-            <span class="material-symbols-outlined service-icon">${svc.icon}</span>
+            <span class="material-symbols-outlined service-icon-sm">${svc.icon}</span>
           </div>
+        </div>
+        <div class="service-card-body">
           <h3 class="service-title">${title}</h3>
-          <p class="body-sm" style="color: var(--color-champagne-dark); font-weight: 600; margin-bottom: 0.5rem; font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em;">
-            ${hook}
-          </p>
+          <p class="service-hook">${hook}</p>
           <p class="service-desc">${desc}</p>
         </div>
         <div class="service-scope">
@@ -347,6 +348,10 @@ function renderProjectsList() {
     return `
       <article class="project-row" onclick="openProjectModal('${proj.id}')" tabindex="0" role="button" aria-label="View ${name} details">
         <span class="project-row-num">${proj.index}</span>
+
+        <div class="project-row-thumb">
+          <img src="${proj.heroImage}" alt="${name}" class="project-thumb-img" loading="lazy">
+        </div>
         
         <div class="project-row-title-box">
           <h3 class="project-row-title">${name}</h3>
@@ -405,22 +410,27 @@ function renderConstructionFlow() {
    ========================================================================== */
 function renderInteriorCategories() {
   const container = document.getElementById('interior-cat-container');
-  if (!container) return;
+  if (!container || !BDM_DATA || !BDM_DATA.interiorCategories) return;
 
-  const categories = [
-    { title: "RESIDENTIAL INTERIORS", desc: "Living rooms, family bedrooms, and private sanctuaries planned for comfort and natural light." },
-    { title: "OFFICE WORKSPACES", desc: "Modern corporate offices, meeting suites, and productive layouts tailored to daily operations." },
-    { title: "COMMERCIAL & RETAIL", desc: "Functional storefronts, display layouts, and customer-centric environments built to last." },
-    { title: "KITCHENS & DINING", desc: "Ergonomic kitchen zones with durable surfaces, organized joinery, and practical utility space." },
-    { title: "RENOVATIONS & REMODELING", desc: "Modernizing dated interiors with updated layouts, acoustic lighting, and durable finishes." },
-    { title: "CUSTOM JOINERY & FINISHES", desc: "Bespoke cabinetry, wall panelling, and fine finishes coordinated with the overall architecture." }
-  ];
+  const isEn = currentLanguage === 'en';
 
-  container.innerHTML = categories.map((cat) => {
+  container.innerHTML = BDM_DATA.interiorCategories.map((cat) => {
+    const title = isEn ? cat.title : cat.bengaliTitle;
+    const tag = isEn ? cat.tag : cat.bengaliTag;
+    const desc = isEn ? cat.desc : cat.bengaliDesc;
+
     return `
-      <article class="interior-cat-card">
-        <h3 class="interior-cat-title">${cat.title}</h3>
-        <p class="interior-cat-desc">${cat.desc}</p>
+      <article class="interior-cat-card" tabindex="0">
+        <div class="interior-cat-media">
+          <img src="${cat.image}" alt="${title}" class="interior-cat-img" loading="lazy">
+          <div class="interior-cat-badge">
+            <span class="label-caps">${tag}</span>
+          </div>
+        </div>
+        <div class="interior-cat-body">
+          <h3 class="interior-cat-title">${title}</h3>
+          <p class="interior-cat-desc">${desc}</p>
+        </div>
       </article>
     `;
   }).join('');
@@ -868,6 +878,7 @@ function setLanguage(lang) {
   renderWhoWeWorkWith();
   renderProjectsList();
   renderTrustPillars();
+  renderInteriorCategories();
 }
 
 /* ==========================================================================
