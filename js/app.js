@@ -8,7 +8,7 @@
  * modal blueprint inspection, bilingual toggling (EN/BN), and project inquiry workflows.
  */
 
-let currentLanguage = 'en';
+let currentLanguage = 'bn';
 let currentProjectCategory = 'ALL';
 let currentModalProject = null;
 
@@ -17,15 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroVideo();
   initMobileDrawer();
   
-  // Dynamic Content Renderers
-  renderCompanyFacts();
-  renderServices();
-  renderDesignToBuild();
-  renderWhoWeWorkWith();
-  renderProjectsList();
-  renderConstructionFlow();
-  renderInteriorCategories();
-  renderTrustPillars();
+  // Default to Bangla or restore client selection
+  const savedLang = localStorage.getItem('bec_lang') || 'bn';
+  setLanguage(savedLang);
 
   initSmoothScroll();
 });
@@ -619,6 +613,10 @@ function selectMapLocation(locKey) {
    ========================================================================== */
 function setLanguage(lang) {
   currentLanguage = lang;
+  try {
+    localStorage.setItem('bec_lang', lang);
+  } catch (e) {}
+  document.documentElement.lang = lang;
 
   const btnEn = document.getElementById('btn-lang-en');
   const btnBn = document.getElementById('btn-lang-bn');
@@ -879,6 +877,58 @@ function setLanguage(lang) {
     if (btnSubmitText) btnSubmitText.textContent = "DISCUSS YOUR PROJECT";
     if (finalBrandStatement) finalBrandStatement.innerHTML = "DESIGN WITH PURPOSE.<br><span class='gold-gradient-text'>BUILD WITH CONFIDENCE.</span>";
   }
+
+  // Navigation Links Translation
+  const navTranslations = {
+    '#about': { en: 'ABOUT', bn: 'আমাদের সম্পর্কে' },
+    '#services': { en: 'SERVICES', bn: 'সেবাসমূহ' },
+    '#design-to-build': { en: 'DESIGN-TO-BUILD', bn: 'ডিজাইন-টু-বিল্ড' },
+    '#clients': { en: 'WHO WE SERVE', bn: 'সেবাগ্রহীতা' },
+    '#projects': { en: 'SELECTED WORK', bn: 'প্রকল্পসমূহ' },
+    '#construction': { en: 'ON-SITE RIGOR', bn: 'সাইট বাস্তবায়ন' },
+    '#interiors': { en: 'INTERIORS', bn: 'ইন্টেরিয়র' },
+    '#trust': { en: 'WHY BEC', bn: 'কেন বিইসি' },
+    '#leadership': { en: 'LEADERSHIP', bn: 'নেতৃত্ব' },
+    '#contact': { en: 'CONTACT', bn: 'যোগাযোগ' }
+  };
+  document.querySelectorAll('.nav-links .nav-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (navTranslations[href]) {
+      link.textContent = navTranslations[href][lang];
+    }
+  });
+
+  const navEnquireBtn = document.getElementById('nav-enquire-btn');
+  if (navEnquireBtn) {
+    const span = navEnquireBtn.querySelector('span:first-child');
+    if (span) span.textContent = lang === 'bn' ? 'প্রকল্প শুরু করুন' : 'START A PROJECT';
+  }
+
+  // Floating & Leadership WhatsApp Labels (01828-178962)
+  const floatingWhatsappText = document.getElementById('floating-whatsapp-text');
+  if (floatingWhatsappText) {
+    floatingWhatsappText.textContent = lang === 'bn' ? 'হোয়াটসঅ্যাপ (০১৮২৮-১৭৮৯৬২)' : 'CHAT WITH BEC';
+  }
+  const btnWhatsappText = document.getElementById('btn-whatsapp-text');
+  if (btnWhatsappText) {
+    btnWhatsappText.textContent = lang === 'bn' ? 'সরাসরি হোয়াটসঅ্যাপ (০১৮২৮-১৭৮৯৬২)' : 'DIRECT WHATSAPP';
+  }
+
+  // Mobile Bottom Quick Navigation Tabs
+  const quickbarTranslations = {
+    '#services': { en: 'SERVICES', bn: 'সেবা' },
+    '#design-to-build': { en: 'BUILD', bn: 'নির্মাণ' },
+    '#clients': { en: 'CLIENTS', bn: 'গ্রাহক' },
+    '#projects': { en: 'WORK', bn: 'প্রকল্প' },
+    '#contact': { en: 'CONTACT', bn: 'যোগাযোগ' }
+  };
+  document.querySelectorAll('.mobile-quickbar .quickbar-tab').forEach(tab => {
+    const href = tab.getAttribute('href');
+    const span = tab.querySelector('span:last-child');
+    if (span && quickbarTranslations[href]) {
+      span.textContent = quickbarTranslations[href][lang];
+    }
+  });
 
   // Re-render dynamic components with updated language
   renderCompanyFacts();
