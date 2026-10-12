@@ -1,7 +1,11 @@
 /**
  * BEC (BROTHER’S ENGINEERING & CONSTRUCTION) — CORE DATA ARCHITECTURE
- * Structured data registry for services, design-to-build workflows,
- * projects, process milestones, interiors, trust pillars, and corporate offices.
+ * Established: 2019 · Location: Chattogram, Bangladesh
+ * CEO: Engr. Md. Shahidul Islam (Milad) · B.Sc. Engg. (Civil), FIEB
+ *
+ * Structured data registry for brand positioning, company facts, services,
+ * design-to-build workflows, process milestones, client profiles, trust pillars,
+ * verified projects, and verified contact coordinates.
  */
 
 const BDM_DATA = {
@@ -9,243 +13,324 @@ const BDM_DATA = {
     name: "Brother’s Engineering & Construction",
     shortName: "BEC",
     bengaliName: "ব্রাদার্স ইঞ্জিনিয়ারিং অ্যান্ড কনস্ট্রাকশন",
-    tagline: "Engineered to Build. Designed to Last.",
-    bengaliTagline: "স্থায়িত্বের জন্য প্রকৌশল। দীর্ঘায়ুর জন্য নকশা।",
-    subline: "From Concept to Completion. Your Vision. Our Engineering. One Complete Build.",
-    bengaliSubline: "পরিকল্পনা থেকে সমাপ্তি। আপনার স্বপ্ন, আমাদের প্রকৌশল।",
-    centralIdea: "From an Idea to a Finished Space.",
-    bengaliCentralIdea: "একটি ধারণা থেকে একটি পরিপূর্ণ স্থাপনা।",
-    headline: "We Design. We Build. We Deliver.",
-    bengaliHeadline: "আমরা নকশা করি। আমরা নির্মাণ করি। আমরা পৌঁছে দেই।",
-    experienceHeadline: "A new name in the market. 15+ years of practical industry experience behind the people who lead it.",
-    bengaliExperienceHeadline: "বাজারে নতুন নাম, কিন্তু নেতৃত্বের পেছনে রয়েছে ১৫+ বছরের বাস্তব নির্মাণ অভিজ্ঞতা।",
-    experienceYears: "15+",
-    experienceStatement: "15+ years of industry experience within our leadership and project expertise.",
-    bengaliExperienceStatement: "আমাদের নেতৃত্ব এবং প্রকল্প অভিজ্ঞতায় রয়েছে ১৫+ বছরের শিল্প জ্ঞান।",
-    industry: "Full-Service Engineering, Construction & Interior Firm",
+    established: "2019",
+    tagline: "DESIGN WITH PURPOSE. BUILD WITH CONFIDENCE.",
+    bengaliTagline: "উদ্দেশ্যপূর্ণ নকশা। আস্থার সাথে নির্মাণ।",
+    subline: "Engineering, design and construction solutions — from concept to completion.",
+    bengaliSubline: "প্রকৌশল, নকশা এবং নির্মাণ সমাধান — পরিকল্পনা থেকে সমাপ্তি।",
+    eyebrow: "ESTABLISHED 2019 · CHATTOGRAM, BANGLADESH",
+    bengaliEyebrow: "স্থাপিত ২০১৯ · চট্টগ্রাম, বাংলাদেশ",
+    headline: "YOUR VISION.<br>OUR ENGINEERING.<br><span class=\"gold-gradient-text\">BUILT TO LAST.</span>",
+    bengaliHeadline: "আপনার স্বপ্ন।<br>আমাদের প্রকৌশল।<br><span class=\"gold-gradient-text\">দীর্ঘস্থায়ী নির্মাণ।</span>",
+    heroDesc: "Brother’s Engineering & Construction delivers architectural design, structural engineering, interior design, consultancy and construction solutions for residential and commercial projects. From early planning to on-site execution and finishing, we help turn ideas into practical, well-designed spaces.",
+    bengaliHeroDesc: "ব্রাদার্স ইঞ্জিনিয়ারিং অ্যান্ড কনস্ট্রাকশন আবাসিক ও বাণিজ্যিক প্রকল্পের জন্য স্থাপত্য নকশা, স্ট্রাকচারাল ইঞ্জিনিয়ারিং, ইন্টেরিয়র ডিজাইন, কনসালটেন্সি ও নির্মাণ সমাধান প্রদান করে। প্রাথমিক পরিকল্পনা থেকে সাইট বাস্তবায়ন ও ফিনিশিং—আমরা প্রতিটি ধারণাকে বাস্তবসম্মত ও চিন্তাশীল পরিসরে রূপ দিই।",
+    credibilityStatement: "Established in 2019, serving clients in Chattogram.",
+    bengaliCredibilityStatement: "স্থাপিত ২০১৯, চট্টগ্রামে ক্লায়েন্টদের বিশ্বস্ত সেবায় নিয়োজিত।",
+    storySummary: "Established in 2019. Built on practical experience. Now bringing its capabilities online.",
+    bengaliStorySummary: "স্থাপিত ২০১৯। বাস্তব কাজের অভিজ্ঞতায় গড়ে ওঠা। এখন অনলাইনে সেবার বিস্তার।",
+    leadership: {
+      name: "Engr. Md. Shahidul Islam (Milad)",
+      bengaliName: "প্রকো. মো. শহিদুল ইসলাম (মিলাদ)",
+      title: "Chief Executive Officer (CEO)",
+      bengaliTitle: "প্রধান নির্বাহী কর্মকর্তা (সিইও)",
+      credentials: "B.Sc. Engg. (Civil) · FIEB",
+      bengaliCredentials: "বি.এসসি. ইঞ্জি. (সিভিল) · এফআইইবি"
+    },
+    industry: "Engineering, Architectural Design & Construction",
     territory: "Chattogram, Bangladesh",
     logoUrl: "assets/logo-white.png",
     heroImage: "assets/projects/shopnaloy-hero.jpg"
   },
 
   hotlines: [
-    { label: "Primary & WhatsApp", number: "+880 1749-349299", raw: "+8801749349299", whatsapp: true },
-    { label: "Engineering Desk", number: "+880 1828-178962", raw: "+8801828178962", whatsapp: false },
-    { label: "Project Consultation", number: "+880 1815-366393", raw: "+8801815366393", whatsapp: false }
+    { label: "Direct Phone & WhatsApp", number: "01828-178962", raw: "+8801828178962", whatsapp: true },
+    { label: "Office Phone", number: "01715-065577", raw: "+8801715065577", whatsapp: false },
+    { label: "Email Consultation", number: "shahid_islam_77@yahoo.com", raw: "mailto:shahid_islam_77@yahoo.com", email: true }
   ],
 
   offices: [
     {
       id: "eidgah",
-      title: "Corporate Office (Eidgah / Pahartali)",
-      bengaliTitle: "প্রধান কার্যালয় (ঈদগাহ / পাহাড়তলী)",
-      address: "2813 / C, Al Helal Bhaban, Eidgah Kacha Rasta Matha, Halishahar Road, Pahartali, Chattogram",
-      bengaliAddress: "২৮১৩ / সি, আল হেলাল ভবন, ঈদগাহ কাঁচা রাস্তা মাথা, হালিশহর রোড, পাহাড়তলী, চট্টগ্রাম",
+      title: "Brother’s Engineering & Construction Office",
+      bengaliTitle: "ব্রাদার্স ইঞ্জিনিয়ারিং অ্যান্ড কনস্ট্রাকশন কার্যালয়",
+      address: "2813/C, Al-Helal Bhaban, Ground Floor, Halishahar Road, Eidgah Kacha Rastar Matha, Pahartali, Chattogram",
+      bengaliAddress: "২৮১৩/সি, আল-হেলাল ভবন, নিচতলা, হালিশহর রোড, ঈদগাহ কাঁচা রাস্তার মাথা, পাহাড়তলী, চট্টগ্রাম",
+      phone: "01828-178962 / 01715-065577",
+      email: "shahid_islam_77@yahoo.com",
       coords: "22.3491° N, 91.8029° E",
-      category: "Corporate Headquarters & Engineering Supervision"
+      category: "Engineering Coordination & Project Planning"
+    }
+  ],
+
+  facts: [
+    {
+      val: "2019",
+      label: "Established",
+      bengaliLabel: "প্রতিষ্ঠা সাল",
+      desc: "Our beginning as Brother’s Engineering & Construction.",
+      bengaliDesc: "ব্রাদার্স ইঞ্জিনিয়ারিং অ্যান্ড কনস্ট্রাকশন হিসেবে আমাদের শুরু।"
+    },
+    {
+      val: "Chattogram",
+      label: "Local Presence",
+      bengaliLabel: "স্থানীয় উপস্থিতি",
+      desc: "Serving the local market from our Chattogram office.",
+      bengaliDesc: "চট্টগ্রাম কার্যালয় থেকে স্থানীয় মার্কেটে সেবা প্রদান।"
+    },
+    {
+      val: "Engineering-Led",
+      label: "Our Approach",
+      bengaliLabel: "প্রকৌশল-ভিত্তিক দৃষ্টিভঙ্গি",
+      desc: "Building projects informed by civil engineering knowledge and practical considerations.",
+      bengaliDesc: "সিভিল ইঞ্জিনিয়ারিং জ্ঞান ও বাস্তব বিবেচনার আলোকে প্রকল্প পরিচালনা।"
+    },
+    {
+      val: "End-to-End",
+      label: "Service Ambition",
+      bengaliLabel: "পূর্ণাঙ্গ সেবা পরিধি",
+      desc: "Design, consultancy, construction and interior solutions coordinated around project needs.",
+      bengaliDesc: "প্রকল্পের চাহিদা অনুযায়ী সমন্বিত নকশা, পরামর্শ, নির্মাণ ও অভ্যন্তরীণ সজ্জা।"
     }
   ],
 
   services: [
     {
       number: "01",
-      title: "BUILDING CONSTRUCTION",
-      bengaliTitle: "ভবন নির্মাণ",
-      icon: "apartment",
-      desc: "From foundations to finishing, we manage construction with attention to structural quality, workmanship, materials and execution.",
-      bengaliDesc: "ভিত্তি থেকে ফিনিশিং—কাঠামোগত গুণমান, কারিগরি দক্ষতা, মানসম্পন্ন উপাদান ও সময়ানুবর্তিতার সাথে আমরা প্রতিটি নির্মাণ পরিচালনা করি।",
-      scope: "Residential buildings, commercial spaces and purpose-built projects.",
-      bengaliScope: "আবাসিক ভবন, বাণিজ্যিক স্থাপনা এবং বিশেষায়িত নির্মাণ প্রকল্প।"
-    },
-    {
-      number: "02",
       title: "ARCHITECTURAL DESIGN",
       bengaliTitle: "স্থাপত্য নকশা",
       icon: "architecture",
-      desc: "Good construction starts with good planning. We develop practical architectural concepts that balance aesthetics, functionality, site conditions, budget and the way people will actually use the space.",
-      bengaliDesc: "পরিকল্পিত নির্মাণের মূল ভিত্তি সঠিক স্থাপত্য নকশা। সৌন্দর্য, কার্যকারিতা, সাইটের অবস্থা ও বাজেটের নিখুঁত সমন্বয়ে আমরা বাস্তবসম্মত ডিজাইন তৈরি করি।",
-      scope: "Spatial planning, exterior facade design, 3D visualizations and municipal approvals.",
-      bengaliScope: "স্পেস প্ল্যানিং, বাহ্যিক ফাসাদ ডিজাইন, থ্রিডি ভিজ্যুয়ালাইজেশন ও অনুমোদন।"
+      hook: "Good buildings begin with good design.",
+      bengaliHook: "ভালো ভবনের শুরু ভালো নকশা দিয়ে।",
+      desc: "We help translate client requirements into architectural concepts and layouts that consider functionality, space planning, appearance, site conditions and intended use.",
+      bengaliDesc: "ক্লায়েন্টের চাহিদা, কার্যকারিতা, স্পেস প্ল্যানিং, বাহ্যিক রূপ, সাইটের অবস্থা ও ব্যবহারের কথা বিবেচনা করে আমরা বাস্তবসম্মত স্থাপত্য নকশা প্রণয়ন করি।",
+      scope: "Spatial planning, conceptual drawings, exterior facades and 3D visual presentation.",
+      bengaliScope: "স্পেস প্ল্যানিং, কনসেপচুয়াল ড্রয়িং, বাহ্যিক ফাসাদ ও থ্রিডি ভিজ্যুয়ালাইজেশন।"
+    },
+    {
+      number: "02",
+      title: "STRUCTURAL DESIGN & ENGINEERING",
+      bengaliTitle: "কাঠামোগত নকশা ও প্রকৌশল",
+      icon: "engineering",
+      hook: "Strength begins with sound engineering.",
+      bengaliHook: "স্থায়িত্বের মূল ভিত্তি নির্ভুল প্রকৌশল।",
+      desc: "We provide structural design and engineering services appropriate to project requirements, with attention to structural systems, safety considerations, durability and applicable technical requirements.",
+      bengaliDesc: "কাঠামোগত সিস্টেম, নিরাপত্তা, দীর্ঘস্থায়িত্ব এবং বিএনবিসি কারিগরি মানদণ্ড অনুযায়ী আমরা স্ট্রাকচারাল ডিজাইন ও ইঞ্জিনিয়ারিং সেবা প্রদান করি।",
+      scope: "Structural analysis, RCC frame design, load assessments and BNBC technical standards.",
+      bengaliScope: "স্ট্রাকচারাল অ্যানালাইসিস, আরসিসি ফ্রেম ডিজাইন, লোড মূল্যায়ন ও বিএনবিসি মানদণ্ড।"
     },
     {
       number: "03",
-      title: "STRUCTURAL ENGINEERING",
-      bengaliTitle: "কাঠামোগত প্রকৌশল",
-      icon: "engineering",
-      desc: "Behind every beautiful building is an engineering system designed to perform. Our approach considers structural integrity, durability, safety and appropriate engineering solutions for each project.",
-      bengaliDesc: "প্রতিটি নান্দনিক ভবনের পেছনে থাকে দক্ষ প্রকৌশল। আমরা ভবনের নিরাপত্তা, দীর্ঘস্থায়িত্ব এবং সিসমিক সহনশীলতাকে সর্বোচ্চ প্রাধান্য দিই।",
-      scope: "BNBC 2020 compliance, seismic zone detailing, soil mechanics & rebar load calculations.",
-      bengaliScope: "বিএনবিসি ২০২০ মানদণ্ড, সিসমিক জোন বিশ্লেষণ ও লোড ক্যালকুলেশন।"
+      title: "INTERIOR DESIGN",
+      bengaliTitle: "অভ্যন্তরীণ নকশা ও পরিকল্পনা",
+      icon: "chair",
+      hook: "Make every space work beautifully.",
+      bengaliHook: "প্রতিটি পরিসরকে সুন্দর ও ব্যবহারযোগ্য করে তুলুন।",
+      desc: "We help plan and design interior spaces with attention to layout, lighting, materials, finishes, usability and the character of the space.",
+      bengaliDesc: "লেআউট, লাইটিং, উপাদান, ফিনিশিং, ব্যবহারিক সুবিধা এবং স্থানের বৈশিষ্ট্যের সমন্বয়ে আমরা ইন্টেরিয়র পরিকল্পনা ও ডিজাইন করি।",
+      scope: "Residential homes, corporate office workspaces, retail shops and custom joinery detailing.",
+      bengaliScope: "আবাসিক বাড়ি, করপোরেট অফিস, শোরুম ও কাস্টম ক্যাবিনেট্রি ডিজাইন।"
     },
     {
       number: "04",
-      title: "INTERIOR DESIGN & EXECUTION",
-      bengaliTitle: "ইন্টেরিয়র ডিজাইন ও বাস্তবায়ন",
-      icon: "chair",
-      desc: "A building is not complete when the walls are finished. We create and execute interiors that bring together layout, lighting, materials, furniture, finishes and functionality — from residential interiors to commercial environments.",
-      bengaliDesc: "দেয়াল তোলা শেষ হলেই ভবনের কাজ শেষ হয় না। লেআউট, লাইটিং, টেক্সচার ও ফার্নিচারের সঠিক মেলবন্ধনে আমরা প্রতিটি অভ্যন্তরীণ পরিসরকে প্রাণবন্ত করে তুলি।",
-      scope: "Home interiors, corporate office spaces, retail showrooms & custom cabinetry.",
-      bengaliScope: "আবাসিক ইন্টেরিয়র, করপোরেট অফিস, শোরুম ও কাস্টম ক্যাবিনেট্রি।"
+      title: "CONSTRUCTION WORK",
+      bengaliTitle: "ভবন নির্মাণকাজ",
+      icon: "apartment",
+      hook: "From plans to the built environment.",
+      bengaliHook: "পরিকল্পনা থেকে বাস্তব স্থাপনা।",
+      desc: "We undertake building construction work for suitable residential and commercial projects, with an emphasis on coordination, workmanship, materials and execution.",
+      bengaliDesc: "সমন্বয়, কারিগরি দক্ষতা, মানসম্পন্ন নির্মাণসামগ্রী এবং শৃঙ্খলার সাথে আমরা উপযুক্ত আবাসিক ও বাণিজ্যিক ভবন নির্মাণকাজ পরিচালনা করি।",
+      scope: "Substructure, superstructure, civil masonry, on-site supervision and execution monitoring.",
+      bengaliScope: "সাবস্ট্রাকচার, সুপারস্ট্রাকচার, সিভিল গাঁথুনি, সাইট সুপারভিশন ও মান নিয়ন্ত্রণ।"
     },
     {
       number: "05",
-      title: "RENOVATION & REMODELING",
-      bengaliTitle: "সংস্কার ও আধুনিকায়ন",
-      icon: "construction",
-      desc: "Existing space can become something completely different. We help clients renovate, remodel and modernize existing properties while respecting the structure, budget and purpose of the space.",
-      bengaliDesc: "পুরোনো যেকোনো স্থানকে নতুন রূপ দেওয়া সম্ভব। ভবনের মূল কাঠামোর নিরাপত্তা বজায় রেখে বাজেট ও আধুনিক চাহিদার আলোকে আমরা সংস্কার সম্পন্ন করি।",
-      scope: "Structural strengthening, facade overhauls, floorplan reconfiguration & modern MEP updates.",
-      bengaliScope: "কাঠামো মজবুতকরণ, ফাসাদ আধুনিকায়ন ও ফ্লোরপ্ল্যান রূপান্তর।"
+      title: "ENGINEERING CONSULTANCY",
+      bengaliTitle: "প্রকৌশল পরামর্শ সেবা",
+      icon: "assignment_turned_in",
+      hook: "Better decisions start with the right guidance.",
+      bengaliHook: "সঠিক সিদ্ধান্তের শুরু সঠিক পরামর্শ দিয়ে।",
+      desc: "We provide engineering and project-related consultancy to help clients understand requirements, evaluate options and plan the next steps of their construction projects.",
+      bengaliDesc: "ক্লায়েন্টদের প্রয়োজনীয়তা বোঝা, বিভিন্ন বিকল্প মূল্যায়ন এবং পরবর্তী পদক্ষেপ সঠিকভাবে নির্ধারণে আমরা প্রকৌশল পরামর্শ সেবা দিই।",
+      scope: "Site inspections, technical feasibility, project scope definition and construction reviews.",
+      bengaliScope: "সাইট পরিদর্শন, কারিগরি সম্ভাব্যতা যাচাই, কাজের পরিধি নির্ধারণ ও নকশা পর্যালোচনা।"
     },
     {
       number: "06",
-      title: "TURNKEY PROJECTS",
-      bengaliTitle: "টার্নকি নির্মাণ প্রকল্প",
-      icon: "key",
-      desc: "One team from concept to completion. From design coordination and material planning to construction, finishing and interior execution, BEC can manage the complete project journey.",
-      bengaliDesc: "পরিকল্পনা থেকে চাবি হস্তান্তর—একটি একক দায়বদ্ধ দল। ড্রয়িং, মালামাল সংগ্রহ, সিভিল কনস্ট্রাকশন ও ইন্টেরিয়র সবকিছু এক ছাতার নিচে।",
-      scope: "Single point of accountability, fixed budget controls & timely handover.",
-      bengaliScope: "একটি একক জবাবদিহিতা, নিয়ন্ত্রিত বাজেট ও সময়মতো চাবি হস্তান্তর।"
+      title: "RENOVATION & REMODELING",
+      bengaliTitle: "সংস্কার ও আধুনিকায়ন",
+      icon: "construction",
+      hook: "Improve what exists. Transform what is possible.",
+      bengaliHook: "বিদ্যমান কাঠামোর মানোন্নয়ন ও আধুনিকায়ন।",
+      desc: "We can support suitable renovation and remodeling projects that modernize existing spaces, improve functionality and respond to changing requirements.",
+      bengaliDesc: "বর্তমান স্থানের উপযোগিতা বৃদ্ধি, নতুন চাহিদা পূরণ এবং কাঠামোগত নিরাপত্তা বজায় রেখে আমরা উপযুক্ত সংস্কার কাজ পরিচালনা করি।",
+      scope: "Spatial alterations, facade upgrades, structural retrofitting and modern interior renewals.",
+      bengaliScope: "স্পেস রূপান্তর, ফাসাদ আধুনিকায়ন, কাঠামোগত মেরামত ও অভ্যন্তরীণ নবায়ন।"
     },
     {
       number: "07",
-      title: "PROJECT MANAGEMENT",
-      bengaliTitle: "প্রকল্প ব্যবস্থাপনা ও তদারকি",
-      icon: "assignment_turned_in",
-      desc: "Construction becomes easier when someone takes responsibility for keeping everything moving. We coordinate people, materials, schedules, contractors and site activities to keep projects organized and progressing.",
-      bengaliDesc: "নির্মাণকাজ সহজ হয় যখন কেউ তা সঠিক নিয়মে এগিয়ে নেওয়ার সম্পূর্ণ দায়িত্ব নেয়। দক্ষ প্রকৌশলী দ্বারা সাইটের প্রতিটি ধাপ সার্বক্ষণিক তদারকি করা হয়।",
-      scope: "Site supervision, procurement tracking, contractor coordination & quality inspection.",
-      bengaliScope: "সাইট সুপারভিশন, প্রকিউরমেন্ট ট্র্যাকিং ও গুণগত মান যাচাই।"
+      title: "DESIGN-TO-BUILD SOLUTIONS",
+      bengaliTitle: "ডিজাইন-টু-বিল্ড সমন্বিত সমাধান",
+      icon: "handshake",
+      hook: "A more connected journey from idea to completion.",
+      bengaliHook: "ধারণা থেকে সমাপ্তি পর্যন্ত একটি সমন্বিত পথচলা।",
+      desc: "For suitable projects, BEC can coordinate design and construction services to reduce fragmentation between planning and execution and help maintain a coherent project direction.",
+      bengaliDesc: "উপযুক্ত প্রকল্পে পরিকল্পনা ও বাস্তবায়নের মধ্যকার দূরত্ব কমাতে এবং কাজের সার্বিক দিক ঠিক রাখতে বিইসি ডিজাইন ও নির্মাণ সেবা সমন্বয় করে।",
+      scope: "Single accountable team, seamless drawing-to-site translation and coordinated management.",
+      bengaliScope: "একক দায়বদ্ধ দল, ড্রয়িং থেকে সাইটে নির্ভুল অনুবাদ এবং সমন্বিত ব্যবস্থাপনা।"
     },
     {
       number: "08",
-      title: "REAL ESTATE DEVELOPMENT",
-      bengaliTitle: "রিয়েল এস্টেট ডেভেলপমেন্ট",
+      title: "RESIDENTIAL & COMMERCIAL PROJECTS",
+      bengaliTitle: "আবাসিক ও বাণিজ্যিক প্রকল্প",
       icon: "domain",
-      desc: "We also develop selected properties with a focus on practical planning, engineering quality, thoughtful architecture and long-term value.",
-      bengaliDesc: "আমরা চট্টগ্রামের বাছাইকৃত স্থানে আধুনিক আবাসিক প্রকল্প গড়ে তুলি—যেখানে জমির সরাসরি অধিকার, উন্নত স্থাপত্য ও স্থায়ী মূল্য নিশ্চিত করা হয়।",
-      scope: "Carefully vetted land parcels, transparent deed structures & low-density living.",
-      bengaliScope: "বাছাইকৃত জমি, স্বচ্ছ সাব-কবলা রেজিস্ট্রি ও নিরিবিলি পারিবারিক পরিবেশ।"
+      hook: "Solutions for the way people live and work.",
+      bengaliHook: "মানুষের বসবাস ও কাজের বাস্তব সমাধান।",
+      desc: "From individual houses and residential buildings to offices, shops and other commercial spaces, we work to understand each project's purpose and requirements before recommending an appropriate approach.",
+      bengaliDesc: "ব্যক্তিমালিকানাধীন বাড়ি ও আবাসিক ভবন থেকে শুরু করে অফিস, দোকান ও অন্যান্য বাণিজ্যিক পরিসরের উদ্দেশ্য বুঝে আমরা সঠিক পদক্ষেপ সুপারিশ করি।",
+      scope: "Individual homes, multi-family residences, commercial buildings, retail spaces and offices.",
+      bengaliScope: "ব্যক্তিগত বাড়ি, বহুমুখী আবাসিক ভবন, বাণিজ্যিক ভবন, রিটেইল দোকান ও অফিস।"
     }
   ],
 
   designToBuildSteps: [
-    { step: "01", name: "IDEA", desc: "Your requirement, sketch or vision." },
-    { step: "02", name: "DESIGN", desc: "Architectural concepts & functional layout." },
-    { step: "03", name: "ENGINEERING", desc: "Structural, MEP & foundation analysis." },
-    { step: "04", name: "APPROVAL", desc: "Statutory & municipal regulatory clearances." },
-    { step: "05", name: "CONSTRUCTION", desc: "Disciplined ground-to-roof civil execution." },
-    { step: "06", name: "INTERIOR", desc: "Finishes, custom joinery & living spaces." },
-    { step: "07", name: "HANDOVER", desc: "Finished space ready for life or business." }
-  ],
-
-  processStages: [
     {
       step: "01",
-      title: "DISCOVER",
-      bengaliTitle: "অনুসন্ধান ও বোঝাপড়া",
-      desc: "Understand the site, requirements, budget, purpose and vision.",
-      bengaliDesc: "সাইটের বাস্তব অবস্থা, ক্লায়েন্টের লক্ষ্য, বাজেট এবং ভবিষ্যতের প্রয়োজনীয়তা গভীরভাবে অনুধাবন করা।"
+      name: "DISCOVER",
+      bengaliName: "অনুসন্ধান",
+      desc: "Understand the client's goals, site, requirements and budget.",
+      bengaliDesc: "ক্লায়েন্টের লক্ষ্য, সাইট, প্রয়োজনীয়তা এবং বাজেট অনুধাবন।"
     },
     {
       step: "02",
-      title: "DESIGN",
-      bengaliTitle: "পরিকল্পনা ও নকশা প্রণয়ন",
-      desc: "Develop the architectural, structural and interior direction.",
-      bengaliDesc: "স্থাপত্যের নান্দনিকতা, স্ট্রাকচারাল স্থায়িত্ব এবং ইন্টেরিয়র লেআউটের সমন্বিত ব্লুপ্রিন্ট তৈরি।"
+      name: "DESIGN",
+      bengaliName: "নকশা প্রণয়ন",
+      desc: "Develop the architectural and interior direction according to the project brief.",
+      bengaliDesc: "প্রকল্পের ব্রিফ অনুযায়ী স্থাপত্য ও ইন্টেরিয়র পরিকল্পনা প্রণয়ন।"
     },
     {
       step: "03",
-      title: "PLAN",
-      bengaliTitle: "প্রকৌশল ও বাজেট সমন্বয়",
-      desc: "Coordinate engineering, materials, costs, timelines and execution.",
-      bengaliDesc: "মালামালের গুণগত মান নির্ধারণ, সুনির্দিষ্ট বাজেট শিট এবং কাজের সময়সীমা বিন্যাস।"
+      name: "ENGINEER",
+      bengaliName: "প্রকৌশল যাচাই",
+      desc: "Address structural and other relevant technical requirements.",
+      bengaliDesc: "কাঠামোগত স্থায়িত্ব ও প্রয়োজনীয় কারিগরি মানদণ্ড নিশ্চিতকরণ।"
     },
     {
       step: "04",
-      title: "BUILD",
-      bengaliTitle: "শৃঙ্খলাবদ্ধ সাইট নির্মাণ",
-      desc: "Bring the design to life through disciplined site execution.",
-      bengaliDesc: "অভিজ্ঞ প্রকৌশলীদের উপস্থিতিতে কঠোর মান নিয়ন্ত্রণে সাইটের মূল নির্মাণকাজ সম্পাদন।"
+      name: "PLAN",
+      bengaliName: "সমন্বিত পরিকল্পনা",
+      desc: "Coordinate the scope of work, resources, costs and execution schedule.",
+      bengaliDesc: "কাজের পরিধি, প্রয়োজনীয় সম্পদ, ব্যয় ও বাস্তবায়ন সময়সূচি সমন্বয়।"
     },
     {
       step: "05",
-      title: "FINISH",
-      bengaliTitle: "ইন্টেরিয়র ও নিখুঁত ফিনিশিং",
-      desc: "Complete interiors, finishing details and final quality checks.",
-      bengaliDesc: "আলোকসজ্জা, পেইন্ট, ক্যাবিনেট্রি ও স্যানিটারি ফিটিংসের নিখুঁত ফিনিশিং ও পরীক্ষণ।"
+      name: "CONSTRUCT",
+      bengaliName: "নির্মাণ সম্পাদন",
+      desc: "Carry out the agreed construction work with attention to site coordination and workmanship.",
+      bengaliDesc: "সাইট সমন্বয় ও কাজের দক্ষতার ওপর গুরুত্ব দিয়ে চুক্তিমাফিক নির্মাণ সম্পাদন।"
     },
     {
       step: "06",
-      title: "HANDOVER",
-      bengaliTitle: "পরিপূর্ণ সমাপ্তি ও হস্তান্তর",
-      desc: "Deliver a finished space ready for the life, business or purpose it was designed for.",
-      bengaliDesc: "পরিবার বা ব্যবসায়ের ব্যবহারের জন্য সম্পূর্ণ প্রস্তুত অবস্থায় আনুষ্ঠানিকভাবে স্থাপনা হস্তান্তর।"
+      name: "FINISH",
+      bengaliName: "ফিনিশিং ও সজ্জা",
+      desc: "Complete the relevant finishing and interior work.",
+      bengaliDesc: "প্রাসঙ্গিক ফিনিশিং এবং অভ্যন্তরীণ সজ্জা ও সাজসজ্জার কাজ সম্পন্নকরণ।"
+    },
+    {
+      step: "07",
+      name: "HANDOVER",
+      bengaliName: "চূড়ান্ত সমাপ্তি",
+      desc: "Review the completed scope and bring the agreed project work to completion.",
+      bengaliDesc: "সম্পন্ন হওয়া কাজের পর্যালোচনা এবং আনুষ্ঠানিকভাবে প্রকল্প কাজ সমাপ্তি।"
     }
   ],
 
-  constructionFlow: [
-    "SITE PREPARATION",
-    "FOUNDATION",
-    "STRUCTURE",
-    "MASONRY",
-    "MEP INFRASTRUCTURE",
-    "FINISHING",
-    "INTERIOR",
-    "FINAL HANDOVER"
-  ],
-
-  interiorCategories: [
-    { title: "HOME INTERIORS", desc: "Calm, functional living rooms, bedrooms and family sanctuaries." },
-    { title: "OFFICE INTERIORS", desc: "Modern, productive corporate workspaces and conference suites." },
-    { title: "RETAIL & COMMERCIAL", desc: "Customer-centric commercial interiors and distinctive display layouts." },
-    { title: "KITCHEN & LIVING", desc: "Ergonomic modular kitchens with durable materials and smart storage." },
-    { title: "CUSTOM SPACES", desc: "Specialized prayer enclaves, private library rooms and lounge terraces." },
-    { title: "RENOVATION", desc: "Transforming tired, dated spaces into modern, functional environments." }
+  whoWeWorkWith: [
+    {
+      icon: "home",
+      title: "Homeowners Planning a New House",
+      bengaliTitle: "নতুন বাড়ি নির্মাণ করতে ইচ্ছুক গৃহমালিক",
+      desc: "Guiding you through functional floor planning, engineering safety, and disciplined construction for your family residence."
+    },
+    {
+      icon: "terrain",
+      title: "Landowners Exploring a Building Project",
+      bengaliTitle: "জমি মালিক যারা নির্মাণের কথা ভাবছেন",
+      desc: "Assessing plot orientation, site constraints, and feasibility to realize your land's best architectural potential."
+    },
+    {
+      icon: "family_restroom",
+      title: "Families Planning Construction or Renovation",
+      bengaliTitle: "আবাসিক নির্মাণ বা সংস্কার প্রত্যাশী পরিবার",
+      desc: "Modernizing, expanding, or improving existing living spaces while preserving structural safety and comfort."
+    },
+    {
+      icon: "storefront",
+      title: "Businesses Developing Offices, Shops or Spaces",
+      bengaliTitle: "অফিস, দোকান বা বাণিজ্যিক পরিসর তৈরিকারী প্রতিষ্ঠান",
+      desc: "Delivering practical layouts, functional fit-outs, and durable finishes tailored to commercial daily operations."
+    },
+    {
+      icon: "palette",
+      title: "Property Owners Looking for Interior Design",
+      bengaliTitle: "ইন্টেরিয়র ডিজাইন ও বাস্তবায়ন প্রত্যাশী",
+      desc: "Thoughtful interior planning, custom joinery, ergonomic lighting, and turnkey finish execution under one roof."
+    },
+    {
+      icon: "support_agent",
+      title: "Clients Seeking Engineering Consultancy",
+      bengaliTitle: "প্রকৌশল ও কারিগরি পরামর্শ প্রত্যাশী",
+      desc: "Sound engineering advice, structural assessments, and technical clarity before making major construction investments."
+    },
+    {
+      icon: "handshake",
+      title: "Developers Seeking Design & Build Partners",
+      bengaliTitle: "নির্মাণ ও নকশা সহযোগী খোঁজা ডেভেলপার",
+      desc: "Reliable engineering collaboration, architectural coordination, and attentive site execution across Chattogram."
+    }
   ],
 
   whyChooseBec: [
     {
       num: "01",
-      title: "EXPERIENCED LEADERSHIP",
-      bengaliTitle: "অভিজ্ঞ নেতৃত্ব",
-      desc: "More than 15 years of practical industry experience behind the people leading the company.",
-      bengaliDesc: "কোম্পানির বর্তমান কাঠামোর পেছনের মূল নেতৃত্বের রয়েছে মাঠপর্যায়ে ১৫+ বছরের বাস্তব কাজের অভিজ্ঞতা।"
+      title: "PRACTICAL ENGINEERING PERSPECTIVE",
+      bengaliTitle: "বাস্তবসম্মত প্রকৌশল দৃষ্টিভঙ্গি",
+      desc: "An engineering-led approach to evaluating project requirements and technical considerations.",
+      bengaliDesc: "প্রকল্পের প্রয়োজনীয়তা ও কারিগরি বিষয়াবলি মূল্যায়নে একটি প্রকৌশল-নেতৃত্বাধীন বাস্তবসম্মত দৃষ্টিভঙ্গি।"
     },
     {
       num: "02",
-      title: "END-TO-END CAPABILITY",
-      bengaliTitle: "সম্পূর্ণ সমাধান",
-      desc: "Design, engineering, construction and interior execution under one coordinated team.",
-      bengaliDesc: "নকশা, প্রকৌশল, সাইট নির্মাণ ও অভ্যন্তরীণ সজ্জা—সবকিছু একটি একক সমন্বিত দলের দায়িত্বে।"
+      title: "CONNECTED SERVICES",
+      bengaliTitle: "সমন্বিত সেবা পরিধি",
+      desc: "Architectural design, structural design, consultancy, construction and interiors available according to project scope.",
+      bengaliDesc: "প্রকল্পের পরিধি অনুযায়ী স্থাপত্য নকশা, কাঠামোগত নকশা, পরামর্শ, সিভিল নির্মাণ ও ইন্টেরিয়র সেবা উপলব্ধ।"
     },
     {
       num: "03",
-      title: "PRACTICAL ENGINEERING",
-      bengaliTitle: "বাস্তবসম্মত প্রকৌশল",
-      desc: "Solutions designed around real site conditions, usability and long-term performance.",
-      bengaliDesc: "কাগজের ড্রয়িং ছাড়িয়ে বাস্তব সাইটের মাটির অবস্থা, আবহাওয়া ও স্থায়িত্বের ওপর ভিত্তি করে তৈরি সমাধান।"
+      title: "LOCAL UNDERSTANDING",
+      bengaliTitle: "চট্টগ্রামের স্থানীয় বাস্তবতা",
+      desc: "A business established in Chattogram with a focus on the needs of the local market.",
+      bengaliDesc: "২০১৯ সালে চট্টগ্রামে প্রতিষ্ঠিত প্রতিষ্ঠান—স্থানীয় নির্মাণ সংস্কৃতি, মাটি ও পরিবেশের বাস্তব অভিজ্ঞতায় ঋদ্ধ।"
     },
     {
       num: "04",
-      title: "CLEAR COMMUNICATION",
-      bengaliTitle: "স্বচ্ছ যোগাযোগ",
-      desc: "Clients should know what is happening, what comes next and what decisions are required.",
-      bengaliDesc: "কাজের অগ্রগতি, ভবিষ্যৎ ধাপ এবং প্রয়োজনীয় সিদ্ধান্ত সম্পর্কে ক্লায়েন্টকে সার্বক্ষণিক অবগত রাখা।"
+      title: "PROJECT-SPECIFIC SOLUTIONS",
+      bengaliTitle: "প্রকল্পভিত্তিক সঠিক সমাধান",
+      desc: "Recommendations shaped around each project's purpose, site, requirements and budget.",
+      bengaliDesc: "প্রতিটি প্রকল্পের নিজস্ব উদ্দেশ্য, সাইটের বাস্তবতা, ক্লায়েন্টের চাহিদা এবং বাজেটের সাথে সামঞ্জস্যপূর্ণ সমাধান।"
     },
     {
       num: "05",
-      title: "ATTENTION TO DETAIL",
-      bengaliTitle: "নিখুঁত যত্ন",
-      desc: "From structural work to the final finish, small decisions shape the final result.",
-      bengaliDesc: "মাটির নিচের পাইলিং থেকে দেয়ালের শেষ রঙের পরত—প্রতিটি ক্ষুদ্র বিষয়ে সতর্ক দৃষ্টি।"
+      title: "CLEAR COMMUNICATION",
+      bengaliTitle: "স্বচ্ছ ও স্পষ্ট যোগাযোগ",
+      desc: "A commitment to helping clients understand the scope of work, project stages and important decisions.",
+      bengaliDesc: "কাজের পরিধি, প্রকল্পের পর্যায়সমূহ এবং গুরুত্বপূর্ণ সিদ্ধান্ত গ্রহণে ক্লায়েন্টকে সুস্পষ্ট তথ্য দিয়ে সহায়তা।"
     },
     {
       num: "06",
-      title: "ACCOUNTABILITY",
-      bengaliTitle: "পূর্ণ দায়বদ্ধতা",
-      desc: "We aim to take responsibility for the work we commit to — not simply pass clients from one contractor to another.",
-      bengaliDesc: "আমরা আমাদের কাজের জন্য সরাসরি দায়বদ্ধ থাকি—ক্লায়েন্টকে এক ঠিকাদার থেকে অন্য ঠিকাদারে ঠেলে দিই না।"
+      title: "RESPONSIBLE EXECUTION",
+      bengaliTitle: "দায়িত্বশীল সাইট বাস্তবায়ন",
+      desc: "Attention to workmanship, coordination and the agreed requirements of each project.",
+      bengaliDesc: "কাজের কারিগরি মান, সাইটের শৃঙ্খলা এবং প্রতিটি প্রকল্পের চুক্তি অনুযায়ী দায়িত্বশীল সম্পাদনে অটল।"
     }
   ],
 
@@ -256,9 +341,10 @@ const BDM_DATA = {
       name: "BEC Shopnaloy",
       bengaliName: "বিইসি স্বপ্নালয়",
       status: "Active Construction",
-      bengaliStatus: "নির্মাণাধীন প্রকল্প",
-      statusBadge: "ACTIVE CONSTRUCTION · PILING & SUBSTRUCTURE",
-      category: "Residential & Purpose-Built Development",
+      bengaliStatus: "সক্রিয় নির্মাণকাজ",
+      statusBadge: "ACTIVE CIVIL CONSTRUCTION · SUBSTRUCTURE & FRAMEWORK",
+      category: "RESIDENTIAL",
+      categoryLabel: "Residential Construction & Structural Engineering",
       location: "Plot 727 · Road 14 · Agrabad CDA · Chattogram",
       bengaliLocation: "প্লট ৭২৭ · রোড ১৪ · আগ্রাবাদ সিডিএ · চট্টগ্রাম",
       heroImage: "assets/projects/shopnaloy-hero.jpg",
@@ -270,18 +356,18 @@ const BDM_DATA = {
       roadWidth: "40 Feet Frontage",
       floors: "G + 8 Storeys (9 Levels)",
       totalUnits: "15 Residences (2 Units / Floor)",
-      landSharePerUnit: "164 Sq. Ft. Registered Land Share",
       configuration: "3 Bed · 3 Bath · 3 Balconies",
-      bookingShare: "Direct Consultation with BEC",
+      scopeDetails: "Architectural planning, structural engineering, and civil execution",
+      bookingShare: "Direct Consultation with BEC Office",
       features: [
-        "40-foot-wide road access in peaceful Road 14 sector",
-        "Direct registered Sub-Kabala land deed before construction begins",
-        "Strictly two residences per floor for maximum cross-ventilation and privacy",
-        "High-speed 8'x8' passenger lift with Automatic Rescue Device (ARD)",
-        "Covered ground floor parking bays and dedicated standby generator",
-        "Landscaped communal rooftop terrace garden with seating pergola"
+        "Architectural space planning maximizing natural lighting and natural airflow",
+        "Engineered structural frame adhering to BNBC seismic and wind criteria",
+        "Two residential units per floor for privacy and ventilation",
+        "Dedicated covered ground-level parking bays and generator room",
+        "Standard batch cylinder testing for concrete mix durability",
+        "Direct engineering supervision during casting and reinforcement placement"
       ],
-      description: "A residential project demonstrating our commitment to practical planning, low-density living, and rigorous civil engineering. Set along a 40-foot-wide road in Agrabad CDA."
+      description: "A residential building project in Agrabad CDA demonstrating BEC's commitment to practical architectural planning, disciplined civil engineering, and attentive on-site execution."
     },
     {
       id: "bdm-shopno-nebash",
@@ -289,32 +375,33 @@ const BDM_DATA = {
       name: "BEC Shopno Nebash",
       bengaliName: "বিইসি স্বপ্ন নিবাস",
       status: "Ongoing Development",
-      bengaliStatus: "চলমান আবাসিক প্রকল্প",
-      statusBadge: "CIVIL FRAMEWORKS & ARCHITECTURE",
-      category: "Executive Family Residences",
+      bengaliStatus: "চলমান উন্নয়ন",
+      statusBadge: "ONGOING PROJECT · CIVIL FRAMEWORKS & ARCHITECTURE",
+      category: "RESIDENTIAL",
+      categoryLabel: "Residential Architecture & Civil Construction",
       location: "Plot 445 · Road 11 · Agrabad CDA · Chattogram",
       bengaliLocation: "প্লট ৪৪৫ · রোড ১১ · আগ্রাবাদ সিডিএ · চট্টগ্রাম",
       heroImage: "assets/projects/shopnonebash-hero.jpg",
       twilightImage: "assets/projects/shopnonebash-twilight.jpg",
       floorPlanImage: "assets/projects/shopnonebash-plan.jpg",
-      planType: "Architectural CAD Blueprint",
+      planType: "Architectural Blueprint Schematic",
       unitSize: "1,750 Sq. Ft.",
       landSize: "5.00 Katha Rectangular Parcel",
       roadWidth: "30 Feet Frontage",
       floors: "G + 9 Storeys (10 Levels)",
       totalUnits: "18 Residences (2 Units / Floor)",
-      landSharePerUnit: "Proportionate Deeded Land Share",
       configuration: "4 Bed · 4 Bath · 3 Balconies",
-      bookingShare: "Consult BEC for Details",
+      scopeDetails: "Structural engineering and construction coordination",
+      bookingShare: "Direct Consultation with BEC Office",
       features: [
-        "5.00 Katha prime rectangular plot with optimal North-South orientation",
-        "Strictly 2 expansive executive apartments per floor for maximum privacy",
-        "Engineered in consultation with Mahi Engineering Services",
-        "Dual fire egress staircases in strict adherence to BNBC & CDA safety codes",
-        "Dedicated utility balconies and cross-ventilated kitchen zones",
-        "Direct deed registration eliminating speculative developer risk"
+        "Optimal North-South residential layout orientation for energy efficiency",
+        "Spacious 4-bedroom executive units designed with family privacy in mind",
+        "Dual egress stairwells compliant with building safety standards",
+        "Cross-ventilated kitchen and utility zones with service verandas",
+        "Reinforced concrete structural design for long-term durability",
+        "Coordinated civil execution with ongoing technical supervision"
       ],
-      description: "Conceived around generous family living on Road 11 in Agrabad CDA. Featuring two residences per floor, expansive four-bedroom layouts, and direct deeded land co-ownership."
+      description: "A multi-family residential building on Road 11 in Agrabad CDA, planned with generous family living spaces, cross-ventilation, and engineering-led execution."
     },
     {
       id: "bdm-future-parcel",
@@ -322,28 +409,30 @@ const BDM_DATA = {
       name: "Agrabad Signature Parcel III",
       bengaliName: "আগ্রাবাদ সিগনেচার পার্সেল ৩",
       status: "Design & Planning Phase",
-      bengaliStatus: "ডিজাইন ও পরিকল্পনা পর্যায়",
-      statusBadge: "UPCOMING DESIGN-TO-BUILD PROJECT",
-      category: "Future Land-Share Development",
+      bengaliStatus: "নকশা ও পরিকল্পনা পর্যায়",
+      statusBadge: "DESIGN & ENGINEERING PLANNING PHASE",
+      category: "ARCHITECTURAL DESIGN",
+      categoryLabel: "Architectural Design & Structural Feasibility",
       location: "Agrabad CDA Residential Area · Chattogram",
       bengaliLocation: "আগ্রাবাদ সিডিএ আ/এ · চট্টগ্রাম",
       heroImage: "assets/projects/parcel-site.jpg",
       twilightImage: "assets/projects/parcel-site.jpg",
       floorPlanImage: "assets/projects/shopnonebash-plan.jpg",
-      planType: "Master Site Schematic (Under CDA Review)",
-      unitSize: "Custom Tailored Allocations",
-      landSize: "Planned 6.00+ Katha Parcel",
-      roadWidth: "Planned 40 Feet Road Frontage",
-      floors: "G + 9 Planned",
-      totalUnits: "Limited Fractional Allotments",
-      landSharePerUnit: "Registered Sub-Kabala",
+      planType: "Site Planning Schematic",
+      unitSize: "Custom Functional Allocations",
+      landSize: "6.00+ Katha Parcel",
+      roadWidth: "40 Feet Road Frontage",
+      floors: "Planned G + 9",
+      totalUnits: "Multi-Storey Residential Scope",
+      configuration: "Residential & Mixed Use",
+      scopeDetails: "Architectural concept design and structural feasibility study",
       features: [
-        "Prime location in central Agrabad CDA residential corridor",
-        "Turnkey design-to-build collaboration with prospective owners",
-        "Earthquake-resistant RCC framed structural design (BNBC 2020)",
-        "Integrated modern MEP infrastructure and standby power backup"
+        "Initial site assessment and soil mechanics evaluation",
+        "Architectural massing and preliminary spatial zoning",
+        "Structural design alignment with BNBC 2020 standards",
+        "Turnkey design-to-build feasibility for prospective property owners"
       ],
-      description: "Upcoming purpose-planned residential and commercial development in Agrabad CDA, reflecting our design-to-build capabilities from raw ground to final delivery."
+      description: "An upcoming design and engineering planning project in Agrabad CDA, reflecting our concept-to-completion capabilities from early feasibility to detailed design."
     }
   ]
 };
