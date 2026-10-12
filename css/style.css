@@ -50,10 +50,9 @@
 
 html {
   font-size: 16px;
-  scroll-behavior: smooth;
   background-color: var(--color-ivory-light);
   color: var(--color-charcoal);
-  text-rendering: optimizeLegibility;
+  text-rendering: optimizeSpeed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -300,16 +299,13 @@ button, input, select, textarea {
 }
 
 .site-header.scrolled {
-  background-color: rgba(244, 240, 232, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: #f4f0e8;
   border-bottom: 1px solid var(--color-stone);
+  box-shadow: 0 2px 12px rgba(20, 20, 19, 0.06);
 }
 
 .site-header.hero-transparent {
-  background-color: rgba(17, 17, 15, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(17, 17, 15, 0.88);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--color-ivory);
 }
@@ -601,16 +597,20 @@ button, input, select, textarea {
   overflow: hidden;
 }
 
-.hero-bg-image,
 .hero-bg-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: brightness(0.70) contrast(1.08);
+  transform: translateZ(0);
 }
 
 .hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.70) contrast(1.08);
   transform: scale(1.05);
   transition: transform 12s ease-out;
 }
@@ -622,9 +622,10 @@ button, input, select, textarea {
 .hero-gradient-overlay {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: 
-    linear-gradient(90deg, rgba(14, 14, 12, 0.72) 0%, rgba(14, 14, 12, 0.40) 50%, rgba(14, 14, 12, 0.12) 100%),
-    linear-gradient(180deg, rgba(14, 14, 12, 0.55) 0%, rgba(14, 14, 12, 0.15) 40%, rgba(14, 14, 12, 0.80) 100%);
+    linear-gradient(90deg, rgba(14, 14, 12, 0.76) 0%, rgba(14, 14, 12, 0.45) 50%, rgba(14, 14, 12, 0.20) 100%),
+    linear-gradient(180deg, rgba(14, 14, 12, 0.60) 0%, rgba(14, 14, 12, 0.20) 40%, rgba(14, 14, 12, 0.85) 100%);
 }
 
 .hero-content {
@@ -3488,27 +3489,18 @@ button, input, select, textarea {
 /* ==========================================================================
    PERFORMANCE & COMPOSITING ENHANCEMENTS (SILKY 60FPS SCROLLING)
    ========================================================================== */
-#services,
-#design-to-build,
-#process,
-#projects,
-#construction,
-#interiors,
-#trust,
-#contact {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 750px;
-}
-
+/* Hardware-accelerated fixed overlays with isolated render layers */
 .floating-whatsapp-btn,
 .mobile-quickbar {
   transform: translateZ(0);
-  will-change: transform;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* Optimize image rendering and layout containment */
+/* Fast asynchronous image rendering */
 img {
-  content-visibility: auto;
+  image-rendering: auto;
 }
 
 /* ==========================================================================

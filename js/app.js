@@ -88,7 +88,7 @@ function initHeroVideo() {
     attemptPlay();
   }
 
-  // Viewport Observer: Pause video when scrolled out of view to free 100% GPU/CPU
+  // Viewport Observer: Pause video immediately when scrolled out of view to free 100% GPU/CPU
   if ('IntersectionObserver' in window && heroSection) {
     const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -102,7 +102,7 @@ function initHeroVideo() {
           }
         }
       });
-    }, { threshold: 0.05 });
+    }, { threshold: 0, rootMargin: '100px 0px 100px 0px' });
     videoObserver.observe(heroSection);
   }
 
@@ -232,7 +232,7 @@ function renderServices() {
     return `
       <article class="service-card" tabindex="0">
         <div class="service-card-media">
-          <img src="${svc.image}" alt="${title}" class="service-card-img" loading="lazy">
+          <img src="${svc.image}" alt="${title}" class="service-card-img" loading="lazy" decoding="async">
           <div class="service-card-badge">
             <span class="service-num">${svc.number}</span>
             <span class="material-symbols-outlined service-icon-sm">${svc.icon}</span>
@@ -359,7 +359,7 @@ function renderProjectsList() {
         <span class="project-row-num">${proj.index}</span>
 
         <div class="project-row-thumb">
-          <img src="${proj.heroImage}" alt="${name}" class="project-thumb-img" loading="lazy">
+          <img src="${proj.heroImage}" alt="${name}" class="project-thumb-img" loading="lazy" decoding="async">
         </div>
         
         <div class="project-row-title-box">
@@ -431,7 +431,7 @@ function renderInteriorCategories() {
     return `
       <article class="interior-cat-card" tabindex="0">
         <div class="interior-cat-media">
-          <img src="${cat.image}" alt="${title}" class="interior-cat-img" loading="lazy">
+          <img src="${cat.image}" alt="${title}" class="interior-cat-img" loading="lazy" decoding="async">
           <div class="interior-cat-badge">
             <span class="label-caps">${tag}</span>
           </div>
