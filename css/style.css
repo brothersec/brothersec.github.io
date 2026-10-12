@@ -21,11 +21,13 @@
   --color-border: #D8D1C5;
   --color-border-dark: #2A2A26;
   
-  /* Typography Tokens — Bodoni Moda (Editorial Quiet Luxury) & Geist (Precision Swiss Sans) */
-  --font-display: 'Bodoni Moda', 'Syne', serif;
-  --font-headline: 'Bodoni Moda', 'Syne', serif;
-  --font-body: 'Geist', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Space Mono', 'Space Grotesk', monospace;
+  /* Typography Tokens — Bodoni Moda (Editorial Luxury), Geist, and Modern Architectural Bengali */
+  --font-display: 'Bodoni Moda', 'Anek Bangla', 'Noto Serif Bengali', 'Syne', serif;
+  --font-headline: 'Bodoni Moda', 'Anek Bangla', 'Noto Serif Bengali', 'Syne', serif;
+  --font-body: 'Geist', 'Hind Siliguri', 'Anek Bangla', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', 'Anek Bangla', 'Space Grotesk', monospace;
+  --font-bangla-display: 'Anek Bangla', 'Noto Serif Bengali', sans-serif;
+  --font-bangla-body: 'Hind Siliguri', 'Anek Bangla', sans-serif;
   
   /* Layout Spacing */
   --gutter: 2rem;
@@ -38,6 +40,142 @@
   --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   --transition-fast: 0.15s ease-out;
+}
+
+/* ==========================================================================
+   BENGALI TYPOGRAPHY ENGINE (CREATIVE, MODERN & ULTRA-READABLE)
+   Designed specifically for BEC Architectural Branding:
+   - Headings/Display: Anek Bangla (Bold, sculptural, contemporary architectural geometry)
+   - Reading/Body: Hind Siliguri (Pristine, open-counter, highest readability for digital text)
+   - Quotes/Editorial: Noto Serif Bengali (Sophisticated editorial elegance)
+   - Eliminates broken conjuncts (যুক্তবর্ণ), severed matras, and letter-spacing glitches.
+   ========================================================================== */
+html[lang="bn"],
+[lang="bn"] {
+  --font-display: 'Anek Bangla', 'Noto Serif Bengali', sans-serif;
+  --font-headline: 'Anek Bangla', 'Noto Serif Bengali', sans-serif;
+  --font-body: 'Hind Siliguri', 'Anek Bangla', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Anek Bangla', 'Space Mono', monospace;
+  font-family: var(--font-body);
+}
+
+html[lang="bn"] body {
+  font-family: var(--font-body);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Architectural Bengali Headings — Anek Bangla */
+html[lang="bn"] h1,
+html[lang="bn"] h2,
+html[lang="bn"] h3,
+html[lang="bn"] h4,
+html[lang="bn"] h5,
+html[lang="bn"] h6,
+html[lang="bn"] .display-hero,
+html[lang="bn"] .headline-xl,
+html[lang="bn"] .headline-lg,
+html[lang="bn"] .headline-md,
+html[lang="bn"] .headline-sm,
+html[lang="bn"] .hero-headline,
+html[lang="bn"] .hero-strapline,
+html[lang="bn"] .section-title,
+html[lang="bn"] .section-heading,
+html[lang="bn"] .card-title,
+html[lang="bn"] .drawer-link-title,
+html[lang="bn"] .modal-title,
+html[lang="bn"] .form-title,
+html[lang="bn"] .font-display {
+  font-family: 'Anek Bangla', 'Noto Serif Bengali', sans-serif !important;
+  font-weight: 700;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  line-height: 1.36;
+  text-transform: none !important;
+}
+
+/* Master Hero Headline */
+html[lang="bn"] .display-hero,
+html[lang="bn"] .hero-headline {
+  font-size: clamp(2.3rem, 5.2vw, 4.1rem);
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+}
+
+/* Clean, Readable Body & Paragraphs — Hind Siliguri */
+html[lang="bn"] p,
+html[lang="bn"] li,
+html[lang="bn"] .hero-subtext,
+html[lang="bn"] .body-lg,
+html[lang="bn"] .body-md,
+html[lang="bn"] .body-sm,
+html[lang="bn"] .section-lead,
+html[lang="bn"] .about-lead,
+html[lang="bn"] .editorial-desc,
+html[lang="bn"] .service-desc,
+html[lang="bn"] .card-desc,
+html[lang="bn"] .font-body {
+  font-family: 'Hind Siliguri', 'Anek Bangla', sans-serif !important;
+  line-height: 1.82;
+  letter-spacing: 0.005em !important;
+  word-spacing: normal !important;
+}
+
+html[lang="bn"] .hero-subtext {
+  font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+  line-height: 1.78;
+  font-weight: 400;
+}
+
+/* Labels, Tags, Buttons, Tickers, Chips — High-impact, zero ligature tearing */
+html[lang="bn"] .label-caps,
+html[lang="bn"] .label-numeric,
+html[lang="bn"] .section-tag,
+html[lang="bn"] .hero-eyebrow,
+html[lang="bn"] .hero-code-stamp,
+html[lang="bn"] .nav-link,
+html[lang="bn"] .btn,
+html[lang="bn"] .btn-label,
+html[lang="bn"] .ticker-text,
+html[lang="bn"] .ticker-item,
+html[lang="bn"] .ticker-left,
+html[lang="bn"] .ticker-center,
+html[lang="bn"] .drawer-link-sub,
+html[lang="bn"] .hero-plot-item,
+html[lang="bn"] .meta-label,
+html[lang="bn"] .category-chip,
+html[lang="bn"] .step-badge,
+html[lang="bn"] .tech-spec-code,
+html[lang="bn"] .font-mono {
+  font-family: 'Anek Bangla', sans-serif !important;
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-transform: none !important;
+  font-weight: 600;
+}
+
+/* Interactive elements */
+html[lang="bn"] .btn,
+html[lang="bn"] .nav-link,
+html[lang="bn"] .lang-btn {
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-family: 'Anek Bangla', sans-serif !important;
+  font-weight: 600;
+}
+
+/* Architectural Quotes & Statements — Noto Serif Bengali */
+html[lang="bn"] blockquote,
+html[lang="bn"] .about-quote,
+html[lang="bn"] .quote-text,
+html[lang="bn"] #about-quote {
+  font-family: 'Noto Serif Bengali', 'Anek Bangla', serif !important;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: normal !important;
 }
 
 /* Base Reset & Reset Defaults */

@@ -727,7 +727,7 @@ function setLanguage(lang) {
     if (aboutDesc2) aboutDesc2.textContent = "সিভিল ইঞ্জিনিয়ারিংয়ে বি.এসসি. ইঞ্জি. ডিগ্রিধারী এবং এফআইইবি সদস্য প্রকো. মো. শহিদুল ইসলাম (মিলাদ)-এর নেতৃত্বে বিইসি প্রতিটি ভবনের পরিকল্পনা ও বাস্তবায়নে প্রকৌশল-ভিত্তিক দৃষ্টিভঙ্গি নিয়ে কাজ করে।";
     if (aboutDesc3) aboutDesc3.textContent = "আমাদের পদ্ধতি সহজ: ক্লায়েন্টের প্রয়োজন বোঝা, সাইটের বাস্তব অবস্থা পর্যালোচনা করা এবং নকশা, উপযোগিতা, নির্মাণ প্রযুক্তি ও বাজেটের মধ্যে একটি সুষম সমাধান তৈরি করা।";
     if (aboutDesc4) aboutDesc4.textContent = "প্রকল্পটি একখণ্ড খালি জমি, একটি ধারণামূলক স্কেচ, একটি স্থাপত্য ড্রয়িং বা সংস্কার প্রয়োজন এমন যেকোনো ভবন দিয়েই শুরু হোক না কেন—বিইসি তা সামনে এগিয়ে নেওয়ার সুনির্দিষ্ট দিকনির্দেশনা ও সেবা প্রদান করে।";
-    if (aboutQuote) aboutQuote.innerHTML = "স্থাপিত ২০১৯। চট্টগ্রামে স্থানীয় শেকড়। উন্নত মানের মানসম্মত স্থাপনায় নিবেদিত।<br><span style='color: var(--color-champagne-dark); font-family: var(--font-mono); font-size: 0.8rem; display: block; margin-top: 0.5rem;'>একটি সুস্পষ্ট লক্ষ্য। একটি নির্ভরযোগ্য দল। পরিকল্পনা থেকে সমাপ্তি।</span>";
+    if (aboutQuote) aboutQuote.innerHTML = "স্থাপিত ২০১৯। চট্টগ্রামে স্থানীয় শেকড়। উন্নত মানের মানসম্মত স্থাপনায় নিবেদিত।<br><span style='color: var(--color-champagne-dark); font-family: var(--font-display); font-size: 0.85rem; display: block; margin-top: 0.5rem; letter-spacing: normal;'>একটি সুস্পষ্ট লক্ষ্য। একটি নির্ভরযোগ্য দল। পরিকল্পনা থেকে সমাপ্তি।</span>";
     if (aboutExpStatement) aboutExpStatement.textContent = "বাস্তব কাজের অভিজ্ঞতায় গড়ে ওঠা। এখন চট্টগ্রামে ডিজিটাল মাধ্যমে সেবা সম্প্রসারণ।";
 
     // Services
